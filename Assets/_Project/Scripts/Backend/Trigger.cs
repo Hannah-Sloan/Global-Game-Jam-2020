@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour
+public class Trigger : Singleton<Trigger>
 {
     [SerializeField] int default_capacity;
     [SerializeField] float default_fireRate;
@@ -39,7 +39,7 @@ public class Trigger : MonoBehaviour
     {
         foreach(var comp in components)
         {
-            if (comp == null) break;
+            if (comp == null) continue;
 
             if (comp is Capacity)
             {

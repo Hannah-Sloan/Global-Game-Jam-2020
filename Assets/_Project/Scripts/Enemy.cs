@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(NavMeshAgent)), RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int maxHealth;
@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     int fireTicks = 0;
     NavMeshAgent agent;
     Player player;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         player = FindObjectOfType<Player>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -52,8 +54,7 @@ public class Enemy : MonoBehaviour
         }
 
         agent.SetDestination(player.transform.position);
-        transform.position = agent.nextPosition;
-
+        rb.MovePosition(agent.nextPosition);
     }
 
     public void TakeDamage(int damage)
@@ -70,7 +71,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(fireTimer);
+        Destroy(fireTimer.gameObject);
         Destroy(gameObject);
     }
     

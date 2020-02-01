@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[
-    RequireComponent(typeof(Magasine)), 
-    RequireComponent(typeof(Trigger)), 
-    RequireComponent(typeof(Muzzle))
-]
 public class Gun : MonoBehaviour
 {
     #region GUN_CONSTANTS
@@ -31,9 +26,9 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trigger = GetComponent<Trigger>();
-        magasize = GetComponent<Magasine>();
-        muzzle = GetComponent<Muzzle>();
+        trigger = Trigger.Instance;
+        magasize = Magasine.Instance;
+        muzzle = Muzzle.Instance;
 
         magasize.gun = this;
     }

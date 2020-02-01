@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Knockback : MagasineComponent
 {
-    public override void Effect(Vector3 pos, ref List<Enemy> enemy, ref Bullet.Flags flags)
-    {
-        throw new System.NotImplementedException();
-    }
+    [SerializeField] float knockbackForce;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Effect(Vector3 vel, ref List<Enemy> enemies, ref Bullet.Flags flags)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log($"Knockback Effect called, with {enemies.Count} enemies");
+        enemies.ForEach(enemy =>
+        {
+            var rb = enemy.GetComponent<Rigidbody>();
+            var dir = vel.normalized;
+            rb.AddForce(dir * knockbackForce);
+            Debug.Log($"Knocking back, " +
+                $"enemy: {enemy}, " +
+                $"pos: {dir}, " +
+                $"dir: {dir}");
+        });
     }
 }
