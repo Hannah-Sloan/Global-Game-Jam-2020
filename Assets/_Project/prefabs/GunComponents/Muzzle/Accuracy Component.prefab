@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6232203530075153928}
   - component: {fileID: -3496816819745922901}
   - component: {fileID: -4875273667364677575}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Accuracy Component
   m_TagString: Untagged
   m_Icon: {fileID: 0}

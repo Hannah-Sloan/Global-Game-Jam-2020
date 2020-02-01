@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -9152190985623211121}
   - component: {fileID: -1474491682051539770}
   - component: {fileID: -1518747187486978994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Kickback Component
   m_TagString: Untagged
   m_Icon: {fileID: 0}

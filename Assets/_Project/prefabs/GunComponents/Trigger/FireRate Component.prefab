@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -824177809150762135}
   - component: {fileID: -2141298130343119076}
   - component: {fileID: -4703771247231474785}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireRate Component
   m_TagString: Untagged
   m_Icon: {fileID: 0}

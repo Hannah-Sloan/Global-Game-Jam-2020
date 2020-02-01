@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6726456166192269625}
   - component: {fileID: 1076860459577090261}
   - component: {fileID: 158687270903466150}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Reload Time Component
   m_TagString: Untagged
   m_Icon: {fileID: 0}

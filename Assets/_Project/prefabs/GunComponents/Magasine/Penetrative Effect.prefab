@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7570591926983369829}
   - component: {fileID: -1306166526430341094}
   - component: {fileID: 6842471009635572163}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Penetrative Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
