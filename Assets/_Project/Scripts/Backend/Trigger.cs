@@ -8,8 +8,6 @@ public class Trigger : MonoBehaviour
     [SerializeField] float default_fireRate;
     [SerializeField] float default_reloadTime;
 
-    
-
     [SerializeField]
     TriggerComponent[] components = new TriggerComponent[Gun.COMPONENT_NUMBER];
 

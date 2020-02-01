@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 
 [
     RequireComponent(typeof(Magasine)), 
@@ -49,10 +49,64 @@ public class Gun : MonoBehaviour
 
     void LaunchProjectiles(LaunchConfig config)
     {
-        var bullet = config.bullet;
-        var rb = bullet.GetComponent<Rigidbody>();
-        var dir = firePositon.transform.forward;
-        rb.AddForce(dir * default_gun_strength);
+        var kickback = config.kickback;  //todo: ASK HANNAH HOW DO
+
+        //List<Bullet> bullets = new List<Bullet>(config.numberOfProjectiles);
+
+        Bullet[] bullets = new Bullet[config.numberOfProjectiles];
+        bullets[0] = config.bullet;
+        for (int i = 1; i < bullets.Length; i++)
+        {
+            bullets[i] = Instantiate(config.bullet);
+        }
+
+        foreach (var bullet in bullets)
+        {
+            //var bullet = Instantiate(config.bullet);
+
+            var rb = bullet.GetComponent<Rigidbody>();
+
+            var randomDir =
+                (Random.value * firePositon.up +
+                Random.value * firePositon.right).normalized;
+            var perturbation = Random.value * (1 - config.accuracy);
+            var error = randomDir * perturbation;
+            var dir = (firePositon.forward + error).normalized;
+
+            Debug.Log(
+                $"fd: {firePositon.forward}" +
+                $"perturb: {perturbation}" +
+                $"error: {error}" +
+                $"dir: {dir}"
+            );
+
+            rb.AddForce(dir * default_gun_strength);
+        }
+
+        //bullets
+        //    .Select(_ => Instantiate(config.bullet, firePositon.position, firePositon.rotation))
+        //    .ToList()
+        //    .ForEach(bullet =>
+        //    {
+        //        var rb = bullet.GetComponent<Rigidbody>();
+
+        //        var randomDir =
+        //            (Random.value * firePositon.up +
+        //            Random.value * firePositon.right).normalized;
+        //        var perturbation = Random.value * (1 - config.accuracy);
+        //        var error = randomDir * perturbation;
+        //        var dir = (firePositon.forward + error).normalized;
+
+        //        Debug.Log(
+        //            $"fd: {firePositon.forward}" +
+        //            $"perturb: {perturbation}" +
+        //            $"error: {error}" +
+        //            $"dir: {dir}"
+        //        );
+
+        //        rb.AddForce(dir * default_gun_strength);
+        //    });
+
     }
 
     void Fire()
@@ -69,7 +123,7 @@ public class Gun : MonoBehaviour
 
     public struct LaunchConfig
     {
-        public int numberOfProjectiles;
+        public int   numberOfProjectiles;
         public float kickback;
         public float accuracy;
         public Bullet bullet;

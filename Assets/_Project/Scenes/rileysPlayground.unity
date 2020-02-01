@@ -928,7 +928,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1415476416}
   m_Father: {fileID: 1559462585}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2555,12 +2556,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415476415}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1559462585}
-  m_RootOrder: 1
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559462584
 GameObject:
@@ -2597,7 +2598,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
-  - {fileID: 1415476416}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2742,6 +2742,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f24337ac4c5784b9f4dec4022e6033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  default_projectileNumber: 1
+  default_kickback: 0
+  default_accuracy: 1
+  default_heavy: 0
+  heavyFactor: 3
   components:
   - {fileID: 0}
   - {fileID: 0}
@@ -2760,9 +2765,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3158c00fbc14f45945907f31aec246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  default_capacity: 5
-  default_fireRate: 1
-  default_reloadTime: 10
+  default_capacity: 100
+  default_fireRate: 5
+  default_reloadTime: 1
   components:
   - {fileID: 0}
   - {fileID: 0}
