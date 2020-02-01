@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
+    [SerializeField]
+    TriggerComponent[] components = new TriggerComponent[Gun.COMPONENT_NUMBER];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,10 @@ public class Trigger : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool CanFire()
+    {
+        return true;
     }
 }
