@@ -72,6 +72,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(fireTimer.gameObject);
+        EnemySpawner.Instance.EnemyKilled();
         Destroy(gameObject);
     }
     
