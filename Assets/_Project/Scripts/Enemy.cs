@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int maxHealth;
@@ -13,6 +15,8 @@ public class Enemy : MonoBehaviour
     bool isOnFire = false;
     Timer fireTimer;
     int fireTicks = 0;
+    NavMeshAgent agent;
+    Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,9 @@ public class Enemy : MonoBehaviour
 
         health = maxHealth;
         fireTimer = Timer.CreateTimer(fireTickTime, false);
+
+        agent = GetComponent<NavMeshAgent>();
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -43,6 +50,10 @@ public class Enemy : MonoBehaviour
             fireTimer.TimerStop();
             fireTimer.ResetTimer();
         }
+
+        agent.SetDestination(player.transform.position);
+        transform.position = agent.nextPosition;
+
     }
 
     public void TakeDamage(int damage)
