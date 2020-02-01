@@ -12,8 +12,8 @@ public class Muzzle : Singleton<Muzzle>
 
     [SerializeField] float heavyFactor;
 
-    [SerializeField]
-    MuzzleComponent[] components = new MuzzleComponent[Gun.COMPONENT_NUMBER];
+    
+    public MuzzleComponent[] components = new MuzzleComponent[Gun.COMPONENT_NUMBER];
 
     #region data_cache
     int   projectileNumber;

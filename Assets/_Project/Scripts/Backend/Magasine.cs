@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Magasine : Singleton<Magasine>
 {
-    [SerializeField]
-    MagasineComponent[] components = new MagasineComponent[Gun.COMPONENT_NUMBER];
+    
+    public MagasineComponent[] components = new MagasineComponent[Gun.COMPONENT_NUMBER];
 
     [SerializeField] Bullet bulletPrefab;
 

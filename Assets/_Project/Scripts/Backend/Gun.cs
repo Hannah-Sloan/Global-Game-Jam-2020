@@ -13,8 +13,14 @@ public class Gun : MonoBehaviour
     Magasine magasize;
     Muzzle muzzle;
 
+    bool broken = false;
+    System.Type lastBrokenComponent = null;
+
     [SerializeField] Player player;
     [SerializeField] float default_gun_strength;
+    [SerializeField] float breakChannce;
+
+    int shotsFired;
 
     public Transform firePositon;
 
@@ -42,6 +48,27 @@ public class Gun : MonoBehaviour
         }
     }
 
+    void Break()
+    {
+        broken = true;
+        List<System.Type> compTypes = new List<System.Type>();
+        compTypes.Add(typeof(MuzzleComponent));
+        compTypes.Add(typeof(TriggerComponent));
+        compTypes.Add(typeof(MagasineComponent));
+
+        compTypes.Remove(lastBrokenComponent);
+
+        var brokenComp = compTypes[Random.Range(0, compTypes.Count)];
+        lastBrokenComponent = brokenComp;
+
+
+    }
+
+    public void Repair()
+    {
+        broken = false;
+    }
+
     void LaunchProjectiles(LaunchConfig config)
     {
         player.GetComponent<CPMPlayer>().playerVelocity -= transform.forward * (float)(config.kickback);
@@ -66,11 +93,28 @@ public class Gun : MonoBehaviour
 
             rb.AddForce(dir * default_gun_strength);
         }
+
+        shotsFired++;
+    }
+
+    bool DoesBreak()
+    {
+        var checkBreak = Random.value;
+        var baseProb = breakChannce;
+        var increaseProb = shotsFired / Time.frameCount;
+        var prob = (baseProb + increaseProb) / 2;
+        bool breaks = checkBreak > prob;
+
+        if (breaks) Break();
+    
+        return breaks;
     }
 
     void Fire()
     {
-        if (trigger.CanFire())
+        if (DoesBreak()) return; 
+
+        if (trigger.CanFire() && !broken)
         {
             LaunchProjectiles(
                 muzzle.ModifyBullet(

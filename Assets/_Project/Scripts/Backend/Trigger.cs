@@ -8,8 +8,8 @@ public class Trigger : Singleton<Trigger>
     [SerializeField] float default_fireRate;
     [SerializeField] float default_reloadTime;
 
-    [SerializeField]
-    TriggerComponent[] components = new TriggerComponent[Gun.COMPONENT_NUMBER];
+    
+    public TriggerComponent[] components = new TriggerComponent[Gun.COMPONENT_NUMBER];
 
     #region cached_data
     int capacity;
