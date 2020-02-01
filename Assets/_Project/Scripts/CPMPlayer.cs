@@ -145,6 +145,7 @@ public class CPMPlayer : MonoBehaviour
         else if(!_controller.isGrounded)
             AirMove();
 
+
         // Move the controller
         _controller.Move(playerVelocity * Time.deltaTime);
 
