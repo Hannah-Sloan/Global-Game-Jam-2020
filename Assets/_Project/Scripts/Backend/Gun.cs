@@ -18,11 +18,11 @@ public class Gun : MonoBehaviour
 
     [SerializeField] Player player;
     [SerializeField] float default_gun_strength;
-    [SerializeField] float breakChannce;
-
-    int shotsFired;
+    [SerializeField] float gunTime;
 
     public Transform firePositon;
+
+    Timer breakTimer;
 
     private void Awake()
     {
@@ -37,6 +37,8 @@ public class Gun : MonoBehaviour
         muzzle = Muzzle.Instance;
 
         magasize.gun = this;
+
+        breakTimer = Timer.CreateTimer(gunTime);
     }
 
     // Update is called once per frame
@@ -50,6 +52,7 @@ public class Gun : MonoBehaviour
 
     void Break()
     {
+        Debug.Log("Broken!");
         broken = true;
         List<System.Type> compTypes = new List<System.Type>();
         compTypes.Add(typeof(MuzzleComponent));
@@ -93,26 +96,11 @@ public class Gun : MonoBehaviour
 
             rb.AddForce(dir * default_gun_strength);
         }
-
-        shotsFired++;
-    }
-
-    bool DoesBreak()
-    {
-        var checkBreak = Random.value;
-        var baseProb = breakChannce;
-        var increaseProb = shotsFired / Time.frameCount;
-        var prob = (baseProb + increaseProb) / 2;
-        bool breaks = checkBreak > prob;
-
-        if (breaks) Break();
-    
-        return breaks;
     }
 
     void Fire()
     {
-        if (DoesBreak()) return; 
+        if (breakTimer.CheckComplete()) Break();
 
         if (trigger.CanFire() && !broken)
         {

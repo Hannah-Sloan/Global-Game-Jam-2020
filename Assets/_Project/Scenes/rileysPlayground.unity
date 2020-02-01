@@ -2727,6 +2727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1559462592}
   default_gun_strength: 1000
+  gunTime: 20
   firePositon: {fileID: 1415476416}
 --- !u!114 &1559462592
 MonoBehaviour:
@@ -2740,7 +2741,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe282a3d1921a0419e75c34c64a6b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 0
+  camera: {fileID: 963194228}
+  reach: 5
+  pickupMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!43 &1662620744
 Mesh:
   m_ObjectHideFlags: 0
