@@ -7,6 +7,10 @@ public class Magasine : MonoBehaviour
     [SerializeField]
     MagasineComponent[] components = new MagasineComponent[Gun.COMPONENT_NUMBER];
 
+    [SerializeField] Bullet bulletPrefab;
+
+    [HideInInspector] public Gun gun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +25,6 @@ public class Magasine : MonoBehaviour
 
     public Bullet GetBullet()
     {
-        return null;
+        return Instantiate(bulletPrefab, gun.firePositon.position, gun.firePositon.rotation);
     }
 }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunComponent : MonoBehaviour
+public class Capacity : TriggerComponent
 {
+    public int value;
     // Start is called before the first frame update
     void Start()
     {
