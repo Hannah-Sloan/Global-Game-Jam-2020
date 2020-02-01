@@ -15,16 +15,16 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Fire();
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButton(0))
+        {
+            Fire();
+        }
     }
 
     void LaunchProjectiles(LaunchConfig config)
