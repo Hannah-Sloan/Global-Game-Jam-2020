@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Magasine : MonoBehaviour
 {
+    [SerializeField]
+    MagasineComponent[] components = new MagasineComponent[Gun.COMPONENT_NUMBER];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,10 @@ public class Magasine : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Bullet GetBullet()
+    {
+        return null;
     }
 }

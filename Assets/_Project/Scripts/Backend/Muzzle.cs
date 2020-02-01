@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Muzzle : MonoBehaviour
 {
+    [SerializeField]
+    MuzzleComponent[] components = new MuzzleComponent[Gun.COMPONENT_NUMBER];
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,13 @@ public class Muzzle : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Gun.LaunchConfig ModifyBullet(Bullet bullet)
+    {
+        return new Gun.LaunchConfig
+        {
+            bullet = bullet
+        };
     }
 }
