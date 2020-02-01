@@ -25,6 +25,20 @@ public class Magasine : MonoBehaviour
 
     public Bullet GetBullet()
     {
-        return Instantiate(bulletPrefab, gun.firePositon.position, gun.firePositon.rotation);
+        var bullet = Instantiate(bulletPrefab, gun.firePositon.position, gun.firePositon.rotation);
+
+        foreach (var comp in components)
+        {
+            if (comp == null) break;
+
+            if (comp is AreaOfEffect)
+                bullet.aoeEvent += comp.Effect;
+            else if (comp is Lightning)
+                bullet.withLightning = true;
+            else
+                bullet.collisionEvent += comp.Effect;
+        }
+
+        return bullet;
     }
 }

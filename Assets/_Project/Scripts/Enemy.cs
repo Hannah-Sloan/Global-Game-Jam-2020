@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MagasineComponent
+public class Enemy : MonoBehaviour
 {
-    public override void Effect(Vector3 post, ref List<Enemy> enemy, ref Bullet.Flags flags)
-    {
-        throw new System.NotImplementedException();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.tag = "Enemy";
     }
 
     // Update is called once per frame

@@ -2,17 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagasineComponent : GunComponent
+public abstract class MagasineComponent : GunComponent
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Effect(Vector3 pos, ref List<Enemy> enemy, ref Bullet.Flags flags);
 }

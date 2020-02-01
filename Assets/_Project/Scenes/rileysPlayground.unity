@@ -2742,9 +2742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f24337ac4c5784b9f4dec4022e6033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  default_projectileNumber: 1
+  default_projectileNumber: 2
   default_kickback: 0
-  default_accuracy: 1
+  default_accuracy: 0.7
   default_heavy: 0
   heavyFactor: 3
   components:

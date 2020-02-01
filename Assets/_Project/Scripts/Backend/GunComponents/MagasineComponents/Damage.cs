@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Damage : MagasineComponent
 {
+    public override void Effect(Vector3 pos, ref List<Enemy> enemy, ref Bullet.Flags flags)
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
