@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Magasine : MonoBehaviour
+public class Magasine : Singleton<Magasine>
 {
     [SerializeField]
     MagasineComponent[] components = new MagasineComponent[Gun.COMPONENT_NUMBER];
@@ -29,7 +29,7 @@ public class Magasine : MonoBehaviour
 
         foreach (var comp in components)
         {
-            if (comp == null) break;
+            if (comp == null) continue;
 
             if (comp is AreaOfEffect)
                 bullet.aoeEvent += comp.Effect;

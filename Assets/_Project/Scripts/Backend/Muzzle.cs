@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Muzzle : MonoBehaviour
+public class Muzzle : Singleton<Muzzle>
 {
     [SerializeField] int   default_projectileNumber;
     [SerializeField] float default_kickback;
@@ -43,7 +43,7 @@ public class Muzzle : MonoBehaviour
     {
         foreach (var comp in components)
         {
-            if (comp == null) break;
+            if (comp == null) continue;
 
             if (comp is Accuracy)
             {

@@ -25,12 +25,14 @@ public class Bullet : MonoBehaviour
     public float timeToLive;
     Timer deathTimer;
     Player player;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         deathTimer = Timer.CreateTimer(timeToLive);
         player = FindObjectOfType<Player>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -115,11 +117,11 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             var enemy = collision.gameObject.GetComponent<Enemy>();
-            DoTheThings(transform.position, enemy, ref flags);
+            DoTheThings(rb.velocity, enemy, ref flags);
             var offset = transform.position - enemy.transform.position;
             if (withLightning)
             {
-                player.StartCoroutine(DoLightning(enemy, offset));
+                player.StartCoroutine(DoLightning(enemy, Vector3.zero));
             }
             //List<Enemy> enemies = new List<Enemy>();
             //enemies.Add(enemy);
@@ -135,6 +137,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Bullet On Trigger Enter");
         if (other.gameObject.CompareTag("Bullet")) return;
 
         Flags flags = Flags.nothing;
@@ -142,11 +145,11 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.gameObject.GetComponent<Enemy>();
-            DoTheThings(transform.position, enemy, ref flags);
+            DoTheThings(rb.velocity, enemy, ref flags);
             var offset = transform.position - enemy.transform.position;
             if (withLightning)
             {
-                player.StartCoroutine(DoLightning(enemy, offset));
+                player.StartCoroutine(DoLightning(enemy, Vector3.zero));
             }
             //List<Enemy> enemies = new List<Enemy>();
             //enemies.Add(enemy);

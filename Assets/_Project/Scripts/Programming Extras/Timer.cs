@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
     private float timerLength = 0;
 
     private bool paused = false;
+
+    public static List<GameObject> timers = new List<GameObject>();
     #endregion
 
     #region Errors
@@ -31,6 +33,7 @@ public class Timer : MonoBehaviour
     public static Timer CreateTimer(float time, bool startOnCreation = true)
     {
         GameObject gameObject = new GameObject("Timer Object");
+        timers.Add(gameObject);
         DontDestroyOnLoad(gameObject);
         Timer timer = gameObject.AddComponent<Timer>();
 
