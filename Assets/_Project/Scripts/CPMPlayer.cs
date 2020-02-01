@@ -97,13 +97,6 @@ public class CPMPlayer : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        if (playerView == null)
-        {
-            Camera mainCamera = Camera.main;
-            if (mainCamera != null)
-                playerView = mainCamera.gameObject.transform;
-        }
-
         // Put the camera inside the capsule collider
         playerView.position = new Vector3(
             transform.position.x,
