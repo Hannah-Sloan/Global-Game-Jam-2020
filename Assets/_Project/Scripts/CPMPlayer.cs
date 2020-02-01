@@ -79,7 +79,7 @@ public class CPMPlayer : MonoBehaviour
     private float rotY = 0.0f;
 
     private Vector3 moveDirectionNorm = Vector3.zero;
-    private Vector3 playerVelocity = Vector3.zero;
+    public Vector3 playerVelocity = Vector3.zero;
     private float playerTopVelocity = 0.0f;
 
     // Q3: players can queue the next jump just before he hits the ground

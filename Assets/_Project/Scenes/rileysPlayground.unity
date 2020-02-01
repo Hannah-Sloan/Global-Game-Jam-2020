@@ -2697,6 +2697,7 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   fpsDisplayRate: 4
+  playerVelocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1559462587
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2743,8 +2744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   default_projectileNumber: 1
-  default_kickback: 0
-  default_accuracy: 1
+  default_kickback: 10
+  default_accuracy: 0.7
   default_heavy: 0
   heavyFactor: 3
   components:
