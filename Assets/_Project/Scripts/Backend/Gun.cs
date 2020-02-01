@@ -63,8 +63,8 @@ public class Gun : MonoBehaviour
             var rb = bullet.GetComponent<Rigidbody>();
 
             var randomDir =
-                (Random.value * firePositon.up +
-                Random.value * firePositon.right).normalized;
+                ((2 * Random.value - 1) * firePositon.up +
+                (2 * Random.value - 1) * firePositon.right).normalized;
             var perturbation = Random.value * (1 - config.accuracy);
             var error = randomDir * perturbation;
             var dir = (firePositon.forward + error).normalized;

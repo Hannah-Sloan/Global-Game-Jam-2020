@@ -6,6 +6,9 @@ using System.Linq;
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] int MAX_JUMPS;
+    [SerializeField] float LIGHTNING_TIMEOUT;
+
     [System.Flags]
     public enum Flags
     {
@@ -47,9 +50,6 @@ public class Bullet : MonoBehaviour
         return enemy;
     }
 
-    public int MAX_JUMPS;
-    public float LIGHTNING_TIMEOUT;
-
     IEnumerator DoLightning(Enemy enemy, Vector3 offset)
     {
         // jump to nearest near-enough
@@ -74,6 +74,8 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Bullet")) return;
+
         Flags flags = Flags.nothing;
 
         if (collision.gameObject.CompareTag("Enemy"))
