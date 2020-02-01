@@ -115,4 +115,36 @@ public static class Extensions
         }
         return layerNumber - 1;
     }
+
+    #region Logs
+    public static void Log(this GameObject gameObject, string message)
+    {
+        Debug.Log(message, gameObject);
+    }
+
+    public static void Log(this MonoBehaviour component, string message)
+    {
+        Debug.Log(message, component);
+    }
+
+    public static string Bold(this string text)
+    {
+        return "<b>" + text + "</b>";
+    }
+
+    public static string Italics(this string text)
+    {
+        return "<i>" + text + "</i>";
+    }
+
+    public static string Size(this string text, int size)
+    {
+        return "<size=" + size + ">" + text + "</size>";
+    }
+
+    public static string Color(this string text, Color color)
+    {
+        return "<color=#" + ColorUtility.ToHtmlStringRGB(color) + ">" + text + "</color>";
+    }
+    #endregion
 }

@@ -150,7 +150,7 @@ MeshCollider:
   m_GameObject: {fileID: 79280896}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -1429,7 +1429,7 @@ MeshCollider:
   m_GameObject: {fileID: 183143442}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -3137,6 +3137,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3924446405502737744, guid: 7268bcf9030461b4686a7a7cba5cec6c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3924446405502737746, guid: 7268bcf9030461b4686a7a7cba5cec6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3205,6 +3210,11 @@ PrefabInstance:
     - target: {fileID: 3924446405502737746, guid: 7268bcf9030461b4686a7a7cba5cec6c,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924446405502737747, guid: 7268bcf9030461b4686a7a7cba5cec6c,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5012,7 +5022,7 @@ MeshCollider:
   m_GameObject: {fileID: 1630097805}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -6702,7 +6712,7 @@ MeshCollider:
   m_GameObject: {fileID: 1902408221}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
@@ -7732,6 +7742,7 @@ GameObject:
   - component: {fileID: 1934441853}
   - component: {fileID: 1934441852}
   - component: {fileID: 1934441855}
+  - component: {fileID: 1934441856}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7865,6 +7876,19 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1934441856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934441851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c3e97db3eb20d4dab028cc1a9c2ebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distToMods: 11.64
 --- !u!1 &2121611410
 GameObject:
   m_ObjectHideFlags: 0
