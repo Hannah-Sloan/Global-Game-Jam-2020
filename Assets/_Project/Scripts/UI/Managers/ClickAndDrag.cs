@@ -28,7 +28,6 @@ public class ClickAndDrag : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
                     mover = hit.collider.GetComponent<UIModMover>();
-                    Debug.Log("Grabbed!".Bold().Color(Color.green), mover);
                 }
             }
         }
@@ -37,7 +36,10 @@ public class ClickAndDrag : MonoBehaviour
             if(Input.GetMouseButton(0))
                 mover.Grabbed(camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, distToMods)));
             if (Input.GetMouseButtonUp(0))
+            {
+                mover.Dropped();
                 mover = null;
+            }
         }
     }
 }
