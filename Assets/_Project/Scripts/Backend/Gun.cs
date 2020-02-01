@@ -69,13 +69,6 @@ public class Gun : MonoBehaviour
             var error = randomDir * perturbation;
             var dir = (firePositon.forward + error).normalized;
 
-            Debug.Log(
-                $"fd: {firePositon.forward}" +
-                $"perturb: {perturbation}" +
-                $"error: {error}" +
-                $"dir: {dir}"
-            );
-
             rb.AddForce(dir * default_gun_strength);
         }
     }

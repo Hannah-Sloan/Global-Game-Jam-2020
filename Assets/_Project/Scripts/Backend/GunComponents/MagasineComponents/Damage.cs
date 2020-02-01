@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class Damage : MagasineComponent
 {
-    public override void Effect(Vector3 pos, ref List<Enemy> enemy, ref Bullet.Flags flags)
-    {
-        throw new System.NotImplementedException();
-    }
+    [SerializeField] int damage;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Effect(Vector3 pos, ref List<Enemy> enemies, ref Bullet.Flags flags)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        enemies.ForEach(enemy => enemy.TakeDamage(damage));
     }
 }
