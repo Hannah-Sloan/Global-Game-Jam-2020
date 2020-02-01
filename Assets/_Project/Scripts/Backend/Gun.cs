@@ -49,9 +49,7 @@ public class Gun : MonoBehaviour
 
     void LaunchProjectiles(LaunchConfig config)
     {
-        var kickback = config.kickback;  //todo: ASK HANNAH HOW DO
-
-        //List<Bullet> bullets = new List<Bullet>(config.numberOfProjectiles);
+        player.GetComponent<CPMPlayer>().playerVelocity -= transform.forward * (float)(config.kickback);
 
         Bullet[] bullets = new Bullet[config.numberOfProjectiles];
         bullets[0] = config.bullet;
@@ -62,8 +60,6 @@ public class Gun : MonoBehaviour
 
         foreach (var bullet in bullets)
         {
-            //var bullet = Instantiate(config.bullet);
-
             var rb = bullet.GetComponent<Rigidbody>();
 
             var randomDir =
@@ -82,31 +78,6 @@ public class Gun : MonoBehaviour
 
             rb.AddForce(dir * default_gun_strength);
         }
-
-        //bullets
-        //    .Select(_ => Instantiate(config.bullet, firePositon.position, firePositon.rotation))
-        //    .ToList()
-        //    .ForEach(bullet =>
-        //    {
-        //        var rb = bullet.GetComponent<Rigidbody>();
-
-        //        var randomDir =
-        //            (Random.value * firePositon.up +
-        //            Random.value * firePositon.right).normalized;
-        //        var perturbation = Random.value * (1 - config.accuracy);
-        //        var error = randomDir * perturbation;
-        //        var dir = (firePositon.forward + error).normalized;
-
-        //        Debug.Log(
-        //            $"fd: {firePositon.forward}" +
-        //            $"perturb: {perturbation}" +
-        //            $"error: {error}" +
-        //            $"dir: {dir}"
-        //        );
-
-        //        rb.AddForce(dir * default_gun_strength);
-        //    });
-
     }
 
     void Fire()
