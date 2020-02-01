@@ -2760,6 +2760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3158c00fbc14f45945907f31aec246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  default_capacity: 5
+  default_fireRate: 1
+  default_reloadTime: 10
   components:
   - {fileID: 0}
   - {fileID: 0}
