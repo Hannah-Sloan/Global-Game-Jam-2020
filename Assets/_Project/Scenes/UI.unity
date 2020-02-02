@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: bd90e7d895c69b4408c694825f5e69d1, type: 2}
 --- !u!1 &79280896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,7 +2695,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh145728
+  m_Name: pb_Mesh150478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -106,5 +106,7 @@ public class Inventory : Singleton<Inventory>
             if (later == null) continue;
             RealAddComponent(later.newMod, later.indexToInsertInto);
         }
+
+        toAddLater = new List<later>(5) { null, null, null, null, null };
     }
 }

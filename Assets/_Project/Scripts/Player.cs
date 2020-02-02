@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
         Destroy(comp.GetComponent<MeshFilter>());
         Destroy(comp.GetComponent<MeshRenderer>());
         Destroy(comp.GetComponent<Collider>());
+        Destroy(comp.GetComponent<Light>());
+        for (int i = 0; i < comp.transform.childCount; i++)
+            Destroy(comp.transform.GetChild(i).gameObject);
         comp.AddToInventory();
     }
 }
