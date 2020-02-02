@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Project/Scenes/AlwaysOn.unity
+    guid: 51f186ab92b69644499ad105547d73d4
   m_configObjects: {}
