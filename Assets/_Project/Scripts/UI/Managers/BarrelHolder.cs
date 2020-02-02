@@ -12,7 +12,11 @@ public class BarrelHolder : Holder
 
     public override void AddMod(GunComponent mod)
     {
-        var noMoreNulls = mods.Where(x => x != null).ToList();
+        var noMoreNulls = mods
+            .Where(x => x != null) 
+            .GroupBy(x => x.GetType())
+            .
+            .ToList();
     }
 
     public override void RemoveMod(GunComponent mod)
