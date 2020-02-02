@@ -33,6 +33,6 @@ public class Player : MonoBehaviour
     void Pickup(GunComponent comp)
     {
         Debug.Log(comp.gameObject);
-        Destroy(comp.gameObject);
+        comp.AddToInventory();
     }
 }
