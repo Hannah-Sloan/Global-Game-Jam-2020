@@ -32,7 +32,13 @@ public class Player : MonoBehaviour
 
     void Pickup(GunComponent comp)
     {
-        Debug.Log(comp.gameObject);
+        //Debug.Log(comp.gameObject);
+        Destroy(comp.GetComponent<MeshFilter>());
+        Destroy(comp.GetComponent<MeshRenderer>());
+        Destroy(comp.GetComponent<Collider>());
+        Destroy(comp.GetComponent<Light>());
+        for (int i = 0; i < comp.transform.childCount; i++)
+            Destroy(comp.transform.GetChild(i).gameObject);
         comp.AddToInventory();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Inventory : Singleton<Inventory>
 {
@@ -42,7 +43,9 @@ public class Inventory : Singleton<Inventory>
 
     public void AddComponent(GunComponent newMod, int indexToInsertInto)
     {
-        toAddLater[indexToInsertInto] = (new later(newMod, indexToInsertInto));
+        //toAddLater[indexToInsertInto] = (new later(newMod, indexToInsertInto));
+        var nextOpen = toAddLater.FindIndex(x => x == null);
+        toAddLater[nextOpen] = new later(newMod, nextOpen);
         return;
     }
 
@@ -91,9 +94,9 @@ public class Inventory : Singleton<Inventory>
         var modMover = token.GetComponent<UIModMover>();
         modMover.home = parent.GetComponentInChildren<Blank>();
         newMod.gameObject.transform.parent = token.transform;
-        Destroy(newMod.GetComponent<MeshFilter>());
-        Destroy(newMod.GetComponent<MeshRenderer>());
-        Destroy(newMod.GetComponent<Collider>());
+        //Destroy(newMod.GetComponent<MeshFilter>());
+        //Destroy(newMod.GetComponent<MeshRenderer>());
+        //Destroy(newMod.GetComponent<Collider>());
         modMover.AddToInv();
     }
 
@@ -104,5 +107,8 @@ public class Inventory : Singleton<Inventory>
             if (later == null) continue;
             RealAddComponent(later.newMod, later.indexToInsertInto);
         }
+
+        //toAddLater = FindObjectOfType<InventoryHolder>().mods.Select(x => x == null ? null : new later()).ToList();
+        toAddLater = new List<later>() { null, null, null, null, null };
     }
 }

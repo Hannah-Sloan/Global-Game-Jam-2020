@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7d3595a85bff57a47bc5ea6a24e413ff, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: bd90e7d895c69b4408c694825f5e69d1, type: 2}
 --- !u!1001 &15867776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Component Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 808199583894116612, guid: 5191cf71e53329e428253e423f1b01ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
       propertyPath: spawnRate
@@ -141,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
       propertyPath: spawnHeight
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
@@ -226,7 +231,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh139152
+  m_Name: pb_Mesh150662
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -813,7 +818,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh139092
+  m_Name: pb_Mesh150600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2951,6 +2956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataStore
       objectReference: {fileID: 0}
+    - target: {fileID: 5777085196356700920, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4df90253b17f0834cafdfccee48ddb7a, type: 3}
 --- !u!1 &1436278138
@@ -3346,7 +3356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh139140
+  m_Name: pb_Mesh150650
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3514,6 +3524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522627511317966792, guid: 438fb7f0ea468cc4d8c0772c123b0651,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6522627511317966794, guid: 438fb7f0ea468cc4d8c0772c123b0651,
         type: 3}

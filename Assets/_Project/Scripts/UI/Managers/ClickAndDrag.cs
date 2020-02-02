@@ -16,7 +16,7 @@ public class ClickAndDrag : MonoBehaviour
     void OnHover(UIModMover modMover)
     {
         var gunComp = modMover.GetComponentInChildren<GunComponent>();
-        flavourText.text = "" ?? gunComp?.ToString();
+        flavourText.text = gunComp?.ToString() ?? "";
     }
 
     void Start()
