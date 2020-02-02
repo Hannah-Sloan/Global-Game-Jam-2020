@@ -6,17 +6,22 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] Gun gun;
+
+    readonly string template = "ammo: {0}";
+
+    string ammo = "";
 
     public void OnAmmoChange(int ammo)
     {
-        ammoText.text = $"ammo: {ammo}";
+        this.ammo = string.Format(template, ammo);
     }
 
     public void OnReload(bool reloading)
     {
         if (reloading)
         {
-            ammoText.text = $"ammo: reloading!";
+            ammo = $"ammo: reloading!";
         }
     }
 
@@ -30,6 +35,7 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gun.broken) ammoText.text = "GUN'S BROKEN";
+        else ammoText.text = ammo;
     }
 }
