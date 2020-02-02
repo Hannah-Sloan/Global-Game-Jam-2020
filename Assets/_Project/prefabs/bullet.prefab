@@ -126,5 +126,7 @@ MonoBehaviour:
   MAX_JUMPS: 3
   LIGHTNING_TIMEOUT: 2
   lightning_radius: 5
+  lightningFxPrefab: {fileID: 722183309088156914, guid: f48345389328b3645bb2d006c7ca6a15,
+    type: 3}
   withLightning: 0
   timeToLive: 100

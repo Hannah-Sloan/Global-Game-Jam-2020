@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] int MAX_JUMPS;
     [SerializeField] float LIGHTNING_TIMEOUT;
     [SerializeField] float lightning_radius;
+    [SerializeField] ParticleSystem lightningFxPrefab;
 
     [System.Flags]
     public enum Flags
@@ -82,20 +83,18 @@ public class Bullet : MonoBehaviour
             blacklist.Add(prev_enemy);
 
             // pause
-            Debug.Log($"pausing for {LIGHTNING_TIMEOUT} seconds");
             yield return new WaitForSeconds(LIGHTNING_TIMEOUT);
-            //yield return null;
-            Debug.Log($"unpaused");
 
             Flags flags = Flags.nothing;
 
             var from = prev_enemy.transform.position;
             var to = nearest.transform.position;
-            Debug.Log($"to: {to}, " +
-                $"from: {from}, " +
-                $"offset: {offset}, " +
-                $"newPoint: {(to - from) + offset}, " +
-                $"nearest: {nearest}");
+
+            var lightningFx = Instantiate(
+                lightningFxPrefab,
+                from,
+                Quaternion.LookRotation(to - from));
+            Destroy(lightningFx.gameObject, lightningFxPrefab.main.duration);
 
             DoTheThings((to-from)+offset, nearest, ref flags);
 
