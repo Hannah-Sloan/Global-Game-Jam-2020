@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerComponent : GunComponent
+public abstract class TriggerComponent : GunComponent
 {
     // Start is called before the first frame update
     void Start()

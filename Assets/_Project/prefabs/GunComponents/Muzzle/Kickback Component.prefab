@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a9cb5106e40744f81a5968ea9471a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  descriptionTemplate: Sometimes, you need your guns to feel a little meatier. This'll
+    do the trick for you, adding a kickback of {0} to your gun
+  value: 25
 --- !u!33 &-9152190985623211121
 MeshFilter:
   m_ObjectHideFlags: 0

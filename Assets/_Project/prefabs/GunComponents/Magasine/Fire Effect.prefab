@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbbb896982b3324f9cebd2985db767f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionTemplate: Lights the target on fire! Does damage over time, dependent
+    on how susceptible to fire an enemy is
 --- !u!33 &3711732453749789909
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63ccdfdd18e66564c858ff4942304501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionTemplate: A shocking power that chains your bullets effects through
+    a series of nearby enemies
 --- !u!33 &4295325078568904034
 MeshFilter:
   m_ObjectHideFlags: 0

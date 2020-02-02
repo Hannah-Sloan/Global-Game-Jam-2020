@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb383e533471e40992c3e6c622e0cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  descriptionTemplate: Tired of missing your marks? This will bring your gun's accuracy
+    up to {0}, so you can focus more on the enemies that matter
+  value: 0.87
 --- !u!33 &-6232203530075153928
 MeshFilter:
   m_ObjectHideFlags: 0

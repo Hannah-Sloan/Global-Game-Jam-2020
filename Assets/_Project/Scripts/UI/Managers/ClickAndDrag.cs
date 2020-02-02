@@ -1,11 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ClickAndDrag : MonoBehaviour
 {
     private new Camera camera;
     public float distToMods;
+    public TextMeshProUGUI flavourText;
+
+    //public delegate void HoverCB();
+
+    //public static HoverCB OnHover;
+
+    void OnHover(UIModMover modMover)
+    {
+        var gunComp = modMover.GetComponentInChildren<GunComponent>();
+        flavourText.text = "" ?? gunComp?.ToString();
+    }
 
     void Start()
     {
@@ -19,15 +31,19 @@ public class ClickAndDrag : MonoBehaviour
     {
         if (mover == null)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                RaycastHit hit;
+            
+            RaycastHit hit;
 
-                Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-                Debug.DrawRay(ray.origin, ray.direction);
-                if (Physics.Raycast(ray, out hit))
+            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(ray.origin, ray.direction);
+            if (Physics.Raycast(ray, out hit))
+            {
+                var maybeMover = hit.collider.GetComponent<UIModMover>();
+                if (maybeMover != null) OnHover(maybeMover);
+
+                if (Input.GetMouseButtonDown(0))
                 {
-                    mover = hit.collider.GetComponent<UIModMover>();
+                    mover = maybeMover;
                 }
             }
         }

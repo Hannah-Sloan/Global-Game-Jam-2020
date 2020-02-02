@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35123b449f0e9e7429871a63ea5b0ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionTemplate: Applies {0} damage directly to the target
   damage: 10
 --- !u!33 &-8357551962852061166
 MeshFilter:
