@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagazineHolder : MonoBehaviour
+public class MagazineHolder : Holder
 {
-    // Start is called before the first frame update
-    void Start()
+    public override int GetTypeAllowance()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return 2;
     }
 }

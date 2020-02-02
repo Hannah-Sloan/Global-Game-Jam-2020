@@ -90,11 +90,11 @@ public class Inventory : Singleton<Inventory>
         GameObject token = Instantiate(toSpawn, parent);
         var modMover = token.GetComponent<UIModMover>();
         modMover.home = parent.GetComponentInChildren<Blank>();
-        modMover.Dropped();
         newMod.gameObject.transform.parent = token.transform;
         Destroy(newMod.GetComponent<MeshFilter>());
         Destroy(newMod.GetComponent<MeshRenderer>());
         Destroy(newMod.GetComponent<Collider>());
+        modMover.AddToInv();
     }
 
     public void OnUI()

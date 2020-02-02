@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class BodyHolder : Holder
 {
-
+    public override int GetTypeAllowance()
+    {
+        return 3;
+    }
 }

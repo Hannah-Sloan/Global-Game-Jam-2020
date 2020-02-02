@@ -21,7 +21,7 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
             }
             else
             {
-                foreach (GameObject g in SceneManager.GetSceneByName("rileysPlayground").GetRootGameObjects())
+                foreach (GameObject g in SceneManager.GetSceneByName("Main").GetRootGameObjects())
                 {
                     g.SetActive(false);
                 }

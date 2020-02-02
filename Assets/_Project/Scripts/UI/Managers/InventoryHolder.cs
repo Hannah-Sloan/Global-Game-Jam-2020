@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class InventoryHolder : Holder
 {
-    //TODO force into Inventory
+    public override int GetTypeAllowance()
+    {
+        return 4;
+    }
 }

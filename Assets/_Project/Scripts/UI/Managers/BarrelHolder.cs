@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class BarrelHolder : Holder
 {
-
+    public override int GetTypeAllowance()
+    {
+        return 1;
+    }
 }
