@@ -13,7 +13,11 @@ public class Gun : MonoBehaviour
     Magasine magasize;
     Muzzle muzzle;
 
-    bool broken = false;
+    public bool broken
+    {
+        get;
+        private set;
+    }
     System.Type lastBrokenComponent = null;
 
     [SerializeField] Player player;
@@ -37,6 +41,7 @@ public class Gun : MonoBehaviour
         muzzle = Muzzle.Instance;
 
         magasize.gun = this;
+        broken = false;
 
         breakTimer = Timer.CreateTimer(gunTime);
     }
