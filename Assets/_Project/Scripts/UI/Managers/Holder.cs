@@ -4,15 +4,15 @@ using UnityEngine;
 
 public abstract class Holder : MonoBehaviour
 {
-    List<GunComponent> mods;
+    protected List<GunComponent> mods;
 
-    public void AddMod(GunComponent mod)
+    public virtual void AddMod(GunComponent mod)
     {
         Start();
         mods.Add(mod);
     }
 
-    public void RemoveMod(GunComponent mod)
+    public virtual void RemoveMod(GunComponent mod)
     {
         mods.Remove(mod);
     }
