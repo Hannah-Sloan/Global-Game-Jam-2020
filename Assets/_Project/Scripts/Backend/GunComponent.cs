@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class GunComponent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [ContextMenu("AddToInventory")]
+    public void AddToInventory()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Inventory.Instance.AddComponent(this, 0);
     }
 }
