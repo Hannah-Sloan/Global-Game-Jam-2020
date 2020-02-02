@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Trigger : Singleton<Trigger>
 {
+    public delegate void AmmoCB(int ammo);
+    public delegate void ReloadCB(bool reloading);
+
+    public AmmoCB OnAmmoChange;
+    public ReloadCB OnReload;
+
     [SerializeField] int default_capacity;
     [SerializeField] float default_fireRate;
     [SerializeField] float default_reloadTime;
-
     
     public TriggerComponent[] components = new TriggerComponent[Gun.COMPONENT_NUMBER];
 
@@ -65,11 +70,14 @@ public class Trigger : Singleton<Trigger>
     void Reload()
     {
         reloading = true;
+        OnReload(true);
 
         StartCoroutine(WaitAndThen(reloadTime, () =>
         {
             inClip = capacity;
+            OnAmmoChange(inClip);
             reloading = false;
+            OnReload(false);
         }));
     }
 
@@ -93,7 +101,10 @@ public class Trigger : Singleton<Trigger>
             Reload();
 
         if (canFire)
+        {
             inClip--;
+            OnAmmoChange(inClip);
+        }
 
         //Debug.Log($"enoughAmmo: {enoughAmmo}, " +
         //    $"enoughTimeElapse: {enoughTimeElapsed}, " +
