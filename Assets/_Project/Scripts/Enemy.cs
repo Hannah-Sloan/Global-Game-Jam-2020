@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float fireTickTime;
     [SerializeField] int fireDamage;
     [SerializeField] int maxFireTicks;
+    [SerializeField] ParticleSystem fireFxPrefab;
 
     int health;
     bool isOnFire = false;
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     Player player;
     Rigidbody rb;
+    ParticleSystem fireFx = null;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,7 @@ public class Enemy : MonoBehaviour
             isOnFire = false;
             fireTimer.TimerStop();
             fireTimer.ResetTimer();
+            if (fireFx != null) Destroy(fireFx.gameObject);
         }
 
         agent.SetDestination(player.transform.position);
@@ -64,6 +67,7 @@ public class Enemy : MonoBehaviour
 
     public void Ignite()
     {
+        fireFx = Instantiate(fireFxPrefab, transform);
         fireTimer.TimerStart();
         isOnFire = true;
         fireTicks = 0;
