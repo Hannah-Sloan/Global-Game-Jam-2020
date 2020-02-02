@@ -57,7 +57,6 @@ public class Enemy : MonoBehaviour
         }
 
         agent.SetDestination(player.transform.position);
-        rb.MovePosition(agent.nextPosition);
     }
 
     public void TakeDamage(int damage)
