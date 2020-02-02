@@ -33,14 +33,19 @@ public abstract class Holder : MonoBehaviour
 
     public virtual void AddMod(GunComponent mod)
     {
-        if (mods == null) Start();
-        mods.Add(mod);
+        if (mods == null || mods.Capacity == 0 || mods.Count == 0) Start();
+        var index = mods.FindIndex(x => x == null);
+        mods[index] = mod;
     }
 
     public virtual void RemoveMod(GunComponent mod)
     {
         var location = mods.FindIndex(x => x == mod);
+        if (location != -1) { 
         mods[location] = null;
+            return;
+        }
+        Debug.Log("This mod was not found when removing it from its prev holder.");
     }
 
     public abstract int GetTypeAllowance();

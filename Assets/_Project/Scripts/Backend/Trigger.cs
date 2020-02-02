@@ -42,7 +42,6 @@ public class Trigger : Singleton<Trigger>
 
     public void UpdateValues()
     {
-        Debug.Log("Updating Trigger");
         foreach(var comp in components)
         {
             if (comp == null) continue;

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
@@ -95,6 +94,7 @@ public class Inventory : Singleton<Inventory>
         var modMover = token.GetComponent<UIModMover>();
         modMover.home = parent.GetComponentInChildren<Blank>();
         newMod.gameObject.transform.parent = token.transform;
+        newMod.gameObject.SetActive(true);
         modMover.AddToInv();
     }
 
