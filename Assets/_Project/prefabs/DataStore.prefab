@@ -75,7 +75,8 @@ MonoBehaviour:
   - {fileID: 3761654789007218361, guid: dc27bed73481a344489eed85fcb97a5f, type: 3}
   - {fileID: 8653905054284720528, guid: c04097f18d1f1f04e9b302eafd13d2c1, type: 3}
   - {fileID: 7873624224001400662, guid: ae2ddf4c963449240bfa1c75599f9146, type: 3}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 7371897953966447477, guid: f366dad79d4bc2d4794f72750d6bbb30,
+    type: 3}
   gun: {fileID: 0}
 --- !u!114 &4468199143777602051
 MonoBehaviour:

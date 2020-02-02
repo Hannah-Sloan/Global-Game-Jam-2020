@@ -64,7 +64,7 @@ public class Gun : MonoBehaviour
         var brokenComp = compTypes[Random.Range(0, compTypes.Count)];
         lastBrokenComponent = brokenComp;
 
-
+        BreakIt.Instance.OnBreak(brokenComp, Repair);
     }
 
     public void Repair()
