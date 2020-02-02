@@ -39,7 +39,7 @@ public class FixMeBreakage : MonoBehaviour
         foreach (var mod in holderToBreakFrom.mods)
         {
             if (mod == null) continue;
-            bool deleteProb = Random.Range(0, 5) >= 4;
+            bool deleteProb = Random.Range(0, 25) >= 24;
 
 
             toBreak.Add(mod.transform.parent.GetComponent<UIModMover>());
