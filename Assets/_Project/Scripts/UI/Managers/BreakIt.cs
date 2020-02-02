@@ -13,9 +13,23 @@ public class BreakIt : Singleton<BreakIt>
             Debug.LogError(("THAT IS" + "NOT".Bold() + "A GUN COMPONENT").Size(35));
         }
 
-        //Check if mag
-        //Check if body
         //Check if barrel
+        if (componentTypeToBreak == typeof(MagasineComponent))
+        {
+
+        }
+
+        //Check if mag
+        if (componentTypeToBreak == typeof(MuzzleComponent))
+        {
+
+        }
+
+        //Check if body
+        if (componentTypeToBreak == typeof(TriggerComponent))
+        {
+
+        }
 
         //TODO: Call done once fixed.
     }
