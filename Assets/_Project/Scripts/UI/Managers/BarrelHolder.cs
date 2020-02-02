@@ -28,9 +28,9 @@ public class BarrelHolder : Holder
         }
     }
 
-    public override void AddMod(GunComponent mod)
+    public override void AddMod(GunComponent mod, int index)
     {
-        base.AddMod(mod);
+        base.AddMod(mod, index);
         Refresh();
     }
 

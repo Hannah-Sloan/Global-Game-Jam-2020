@@ -36,9 +36,9 @@ public class BodyHolder : Holder
         Trigger.Instance.UpdateValues();
     }
 
-    public override void AddMod(GunComponent mod)
+    public override void AddMod(GunComponent mod, int index)
     {
-        base.AddMod(mod);
+        base.AddMod(mod, index);
         Refresh();
 
         //var nextOpen = mods.FindIndex(x => x == null);

@@ -11,6 +11,12 @@ public class InventoryHolder : Holder
 
     public override void Start()
     {
+        UIEnableDisable.Instance.UIOff += OnUIEnd;
         mods = new List<GunComponent>() { null, null, null, null, null};
+    }
+
+    public void OnUIEnd()
+    {
+        Inventory.Instance.SyncToAddLater(mods);
     }
 }

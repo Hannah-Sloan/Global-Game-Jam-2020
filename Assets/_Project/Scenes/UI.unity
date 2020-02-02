@@ -4466,7 +4466,6 @@ GameObject:
   - component: {fileID: 1056066470}
   - component: {fileID: 1056066469}
   - component: {fileID: 1056066472}
-  - component: {fileID: 1056066473}
   m_Layer: 0
   m_Name: BarrelBlank1
   m_TagString: Untagged
@@ -4550,20 +4549,6 @@ MeshFilter:
   m_GameObject: {fileID: 1056066467}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1056066472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056066467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0ba3a4764d9434d8aa1db9078fa755, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resident: {fileID: 0}
-  homePos: {x: 0, y: 0, z: 0}
---- !u!114 &1056066473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
