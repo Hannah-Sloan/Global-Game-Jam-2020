@@ -60,7 +60,7 @@ public class Muzzle : Singleton<Muzzle>
             }
             if (comp is Kickback)
             {
-                kickback = (comp as ProjectileNumber).value;
+                kickback = (comp as Kickback).value;
             }
         }
     }
