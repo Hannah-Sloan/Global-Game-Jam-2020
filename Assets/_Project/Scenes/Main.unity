@@ -812,6 +812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoText: {fileID: 1436278140}
+  gun: {fileID: 864278710}
 --- !u!43 &325504863
 Mesh:
   m_ObjectHideFlags: 0
@@ -1067,6 +1068,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &864278710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8491911381225590589, guid: 1661e024b67cc9542981d82dd936b669,
+    type: 3}
+  m_PrefabInstance: {fileID: 999627018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc33b6e9d2652e44cb3c7fad8b1ee40a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &999627018
 PrefabInstance:
   m_ObjectHideFlags: 0
