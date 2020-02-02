@@ -54,6 +54,8 @@ public class Gun : MonoBehaviour
     {
         Debug.Log("Broken!");
         broken = true;
+        breakTimer.TimerStop();
+        breakTimer.ResetTimer();
         List<System.Type> compTypes = new List<System.Type>();
         compTypes.Add(typeof(MuzzleComponent));
         compTypes.Add(typeof(TriggerComponent));
@@ -70,6 +72,8 @@ public class Gun : MonoBehaviour
     public void Repair()
     {
         broken = false;
+        breakTimer.StartTime();
+
     }
 
     void LaunchProjectiles(LaunchConfig config)
