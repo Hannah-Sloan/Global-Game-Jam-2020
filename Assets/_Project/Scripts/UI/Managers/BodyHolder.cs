@@ -10,16 +10,13 @@ public class BodyHolder : Holder
         return 3;
     }
 
-    public override void AddMod(GunComponent mod)
+    void Refresh()
     {
-        var nextOpen = mods.FindIndex(x => x == null);
-        mods[nextOpen] = mod;
-
         var uniqueGunComponents = mods
-            .Where(x => x != null)
-            .GroupBy(x => x.GetType())
-            .Select(x => x.First())
-            .ToList();
+           .Where(x => x != null)
+           .GroupBy(x => x.GetType())
+           .Select(x => x.First())
+           .ToList();
 
         int i = 0;
         foreach (var gc in uniqueGunComponents)
@@ -37,5 +34,22 @@ public class BodyHolder : Holder
         //}
 
         Trigger.Instance.UpdateValues();
+    }
+
+    public override void AddMod(GunComponent mod)
+    {
+        var nextOpen = mods.FindIndex(x => x == null);
+        mods[nextOpen] = mod;
+
+        Refresh();
+    }
+
+    public override void RemoveMod(GunComponent mod)
+    {
+        var location = mods.FindIndex(x => x == mod);
+        var trash = mods[location];
+        mods[location] = null;
+        Destroy(trash);
+        Refresh();
     }
 }

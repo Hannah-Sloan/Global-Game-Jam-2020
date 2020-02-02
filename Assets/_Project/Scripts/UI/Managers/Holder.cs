@@ -5,7 +5,7 @@ using System.Linq;
 
 public abstract class Holder : MonoBehaviour
 {
-    protected List<GunComponent> mods;
+    public List<GunComponent> mods;
 
     [ContextMenu("TestMods")]
     public void TestMods()

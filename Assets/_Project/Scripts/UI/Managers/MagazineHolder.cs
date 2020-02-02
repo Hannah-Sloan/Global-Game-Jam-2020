@@ -10,16 +10,13 @@ public class MagazineHolder : Holder
         return 2;
     }
 
-    public override void AddMod(GunComponent mod)
+    void Refresh()
     {
-        var nextOpen = mods.FindIndex(x => x == null);
-        mods[nextOpen] = mod;
-
         var uniqueGunComponents = mods
-            .Where(x => x != null)
-            .GroupBy(x => x.GetType())
-            .Select(x => x.First())
-            .ToList();
+           .Where(x => x != null)
+           .GroupBy(x => x.GetType())
+           .Select(x => x.First())
+           .ToList();
         int i = 0;
         foreach (var gc in uniqueGunComponents)
         {
@@ -30,5 +27,22 @@ public class MagazineHolder : Holder
             }
         }
         Muzzle.Instance.UpdateValues();
+    }
+
+    public override void AddMod(GunComponent mod)
+    {
+        var nextOpen = mods.FindIndex(x => x == null);
+        mods[nextOpen] = mod;
+
+        Refresh();
+    }
+
+    public override void RemoveMod(GunComponent mod)
+    {
+        var location = mods.FindIndex(x => x == mod);
+        //var trash = mods[location];
+        mods[location] = null;
+       // Destroy(trash);
+        Refresh();
     }
 }

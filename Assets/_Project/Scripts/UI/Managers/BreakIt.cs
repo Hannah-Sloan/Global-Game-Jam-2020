@@ -28,7 +28,7 @@ public class BreakIt : Singleton<BreakIt>
         //Check if body
         if (componentTypeToBreak == typeof(TriggerComponent))
         {
-
+            
         }
 
         //TODO: Call done once fixed.

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Inventory : Singleton<Inventory>
 {
@@ -107,6 +108,7 @@ public class Inventory : Singleton<Inventory>
             RealAddComponent(later.newMod, later.indexToInsertInto);
         }
 
-        toAddLater = new List<later>(5) { null, null, null, null, null };
+        //toAddLater = FindObjectOfType<InventoryHolder>().mods.Select(x => x == null ? null : new later()).ToList();
+        toAddLater = new List<later>() { null, null, null, null, null };
     }
 }
