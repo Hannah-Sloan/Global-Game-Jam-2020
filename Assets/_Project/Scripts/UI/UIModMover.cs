@@ -5,14 +5,14 @@ using System.Linq;
 
 public class UIModMover : MonoBehaviour
 {
-    private Blank home = null;
+    public Blank home = null;
     private Blank potentialNewHome = null;
     public float radius = 5f;
 
-    private void Awake()
-    {
-        home = transform.parent.GetComponentInChildren<Blank>();
-    }
+    //private void Awake()
+    //{
+    //    home = transform.parent.GetComponentInChildren<Blank>();
+    //}
 
     public void Grabbed(Vector3 mouseWorldLoc)
     {
