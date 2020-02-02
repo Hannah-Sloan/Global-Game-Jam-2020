@@ -7,6 +7,8 @@ public class EnemySpawner : Singleton<EnemySpawner>
     [SerializeField] Enemy enemyPrefab;
     [Range(0, 1)][SerializeField] float spawnRateScaleFactor = 1;
 
+    public int totalKills => enemykills;
+
    // float spawnTimeout => 1 / spawnFrequency;
     //Timer spawnTimer;
     float elapsedTime = 0;

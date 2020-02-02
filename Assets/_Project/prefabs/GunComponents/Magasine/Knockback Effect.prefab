@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8adf9e14519b24646b6fdf32d68c36ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionTemplate: Send the target flying background with the power of {0} newtons
+  descriptionTemplate: Send the target flying background with the power of {0:N2}
+    newtons
   knockbackForce: 100
 --- !u!33 &188831834261857690
 MeshFilter:
