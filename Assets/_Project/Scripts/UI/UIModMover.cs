@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class UIModMover : MonoBehaviour
 {
@@ -19,13 +20,13 @@ public class UIModMover : MonoBehaviour
         transform.position = new Vector3(mouseWorldLoc.x, mouseWorldLoc.y, transform.position.z);
     }
 
-    public void AddToInv()
+    public void AddToInv(int indexToInsertInto)
     {
         if (home.resident != null)
             Destroy(home.resident.gameObject);
         transform.parent = home.transform.parent;
         home.resident = this;
-        home.transform.parent.parent.GetComponent<InventoryHolder>().AddMod(transform.GetComponentInChildren<GunComponent>());
+        home.transform.parent.parent.GetComponent<InventoryHolder>().AddMod(transform.GetComponentInChildren<GunComponent>(), indexToInsertInto);
         transform.localPosition = Vector3.zero;
     }
 
@@ -50,7 +51,9 @@ public class UIModMover : MonoBehaviour
             home = potentialNewHome;
             transform.parent = home.transform.parent;
             home.resident = this;
-            potentialNewHome.transform.parent.parent.GetComponent<Holder>().AddMod(transform.GetComponentInChildren<GunComponent>());
+            int index;
+            Int32.TryParse(potentialNewHome.transform.parent.name.Replace("Slot", ""), out index);
+            potentialNewHome.transform.parent.parent.GetComponent<Holder>().AddMod(transform.GetComponentInChildren<GunComponent>(), index-1);
         }
         transform.localPosition = Vector3.zero;
     }

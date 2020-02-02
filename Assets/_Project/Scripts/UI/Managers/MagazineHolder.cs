@@ -29,9 +29,9 @@ public class MagazineHolder : Holder
         Muzzle.Instance.UpdateValues();
     }
 
-    public override void AddMod(GunComponent mod)
+    public override void AddMod(GunComponent mod, int index)
     {
-        base.AddMod(mod);
+        base.AddMod(mod, index);
         Refresh();
     }
 

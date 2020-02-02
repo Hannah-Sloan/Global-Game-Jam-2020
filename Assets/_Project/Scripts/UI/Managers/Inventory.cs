@@ -33,7 +33,7 @@ public class Inventory : Singleton<Inventory>
 
     [SerializeField] public List<tokenList> modTokens = new List<tokenList>();
 
-    private List<later> toAddLater = new List<later>(5);
+    public List<later> toAddLater = new List<later>(5);
 
     void Awake()
     {
@@ -46,6 +46,14 @@ public class Inventory : Singleton<Inventory>
         //var nextOpen = toAddLater.FindIndex(x => x == null);
         //toAddLater[nextOpen] = new later(newMod, nextOpen);
         //return;
+    }
+
+    public void SyncToAddLater(List<GunComponent> currentInv)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            toAddLater[i] = new later(currentInv[i], i);
+        }
     }
 
     private void RealAddComponent(GunComponent newMod, int indexToInsertInto)
@@ -95,14 +103,14 @@ public class Inventory : Singleton<Inventory>
         modMover.home = parent.GetComponentInChildren<Blank>();
         newMod.gameObject.transform.parent = token.transform;
         newMod.gameObject.SetActive(true);
-        modMover.AddToInv();
+        modMover.AddToInv(indexToInsertInto);
     }
 
     public void OnUI()
     {
         for (int i = 0; i < toAddLater.Count; i++)
         {
-            if (toAddLater[i] == null) continue;
+            if (toAddLater[i] == null || toAddLater[i].newMod == null) continue;
             RealAddComponent(toAddLater[i].newMod, toAddLater[i].indexToInsertInto);
             toAddLater[i] = null;
         }

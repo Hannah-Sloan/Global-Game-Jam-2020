@@ -10,9 +10,9 @@ public abstract class GunComponent : MonoBehaviour
     protected abstract System.Object[] templateSubs { get; }
 
     [ContextMenu("AddToInventory")]
-    public void AddToInventory()
+    public void AddToInventory(int i)
     {
-        Inventory.Instance.AddComponent(this, 0);
+        Inventory.Instance.AddComponent(this, i);
     }
 
     public override string ToString()

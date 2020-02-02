@@ -17,20 +17,11 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            StartCoroutine(UIWaitSecondLaunch());
+
             if (uiON)
             {
-                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
-                foreach (GameObject g in SceneManager.GetSceneByName("Main").GetRootGameObjects())
-                {
-                    g.SetActive(true);
-                }
-                foreach (GameObject g in SceneManager.GetSceneByName("UI").GetRootGameObjects())
-                {
-                    g.SetActive(false);
-                }
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                StartCoroutine(UIWaitSecondLaunch());
+                if (UIOff != null) UIOff();
             }
             else
             {
@@ -45,8 +36,6 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
                 }
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                if (UIOn != null) UIOn();
-                uiON = true;
             }
         }
     }
@@ -57,7 +46,17 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
 
         if (uiON)
         {
-            if (UIOff != null) UIOff();
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
+            foreach (GameObject g in SceneManager.GetSceneByName("Main").GetRootGameObjects())
+            {
+                g.SetActive(true);
+            }
+            foreach (GameObject g in SceneManager.GetSceneByName("UI").GetRootGameObjects())
+            {
+                g.SetActive(false);
+            }
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             uiON = false;
         }
         else

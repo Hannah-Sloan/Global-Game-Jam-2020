@@ -31,10 +31,10 @@ public abstract class Holder : MonoBehaviour
         
     }
 
-    public virtual void AddMod(GunComponent mod)
+    public virtual void AddMod(GunComponent mod, int index)
     {
         if (mods == null || mods.Capacity == 0 || mods.Count == 0) Start();
-        var index = mods.FindIndex(x => x == null);
+        //var index = mods.FindIndex(x => x == null);
         mods[index] = mod;
     }
 
