@@ -5,6 +5,8 @@ using UnityEngine;
 public class Capacity : TriggerComponent
 {
     public int value;
+
+    protected override object[] templateSubs => new object[] { value };
     // Start is called before the first frame update
     void Start()
     {

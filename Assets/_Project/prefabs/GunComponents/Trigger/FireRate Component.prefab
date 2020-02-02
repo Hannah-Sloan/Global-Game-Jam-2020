@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6cb4fbaeab9324d8857f5789c6b8ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  descriptionTemplate: Feeling like you can't get through your clip fast enough?
+    Too many enemies coming at you at once? Try this to shoot {0} rounds per second!
+  value: 25
 --- !u!33 &-824177809150762135
 MeshFilter:
   m_ObjectHideFlags: 0

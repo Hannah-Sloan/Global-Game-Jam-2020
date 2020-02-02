@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b9bbd10e396a7d469858f09707ce47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  descriptionTemplate: Feel like you need some extra room in your clip before you
+    reload? This will give you {0} bullets at your desposal before your next pause
+  value: 60
 --- !u!33 &1570108826431654381
 MeshFilter:
   m_ObjectHideFlags: 0

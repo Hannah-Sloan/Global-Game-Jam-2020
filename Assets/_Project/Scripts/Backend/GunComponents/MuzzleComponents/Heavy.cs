@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Heavy : MuzzleComponent
 {
+    protected override object[] templateSubs => new object[] { };
+
     // Start is called before the first frame update
     void Start()
     {

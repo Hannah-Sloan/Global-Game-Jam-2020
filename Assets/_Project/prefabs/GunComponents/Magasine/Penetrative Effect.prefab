@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889620fdff74c934b9964188cd62eb7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionTemplate: No more are enemies mere obstacles! Now, your bullets fly
+    right through them as if they were not even there... except they still leave
+    behind all the nasty effects on the way
 --- !u!33 &7570591926983369829
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -46,6 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1b434ee6343e044b764cdaafc33010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionTemplate: You ever feel like your bullets are too light? This will give
+    them some heft, flying slower and arcing more. Rain damage on your foes from
+    above
 --- !u!33 &-7172771545697054319
 MeshFilter:
   m_ObjectHideFlags: 0

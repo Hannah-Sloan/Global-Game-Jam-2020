@@ -6,6 +6,8 @@ public class Knockback : MagasineComponent
 {
     [SerializeField] float knockbackForce;
 
+    protected override object[] templateSubs => new object[] { knockbackForce };
+
     public override void Effect(Vector3 vel, ref List<Enemy> enemies, ref Bullet.Flags flags)
     {
         Debug.Log($"Knockback Effect called, with {enemies.Count} enemies");

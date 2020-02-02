@@ -7,6 +7,9 @@ public class AreaOfEffect : MagasineComponent
 {
     [SerializeField] float radius;
 
+    protected override object[] templateSubs => new object[] { radius };
+
+
     public override void Effect(Vector3 pos, ref List<Enemy> enemies, ref Bullet.Flags flags)
     {
         var nearby = Physics

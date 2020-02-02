@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71b4fdb1d68c6140823aa0683b064a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  descriptionTemplate: Causes all effects to be applied to all enemies with {0} of
+    the target
   radius: 10
 --- !u!33 &2151384716969606091
 MeshFilter:

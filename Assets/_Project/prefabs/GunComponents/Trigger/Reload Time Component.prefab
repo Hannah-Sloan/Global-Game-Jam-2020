@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6371b95a1141c34c8b481d8461776ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 0
+  descriptionTemplate: 'Reloading sucks. We all know this. This will bring your reloading
+    time down to {0} seconds! '
+  value: 0.5
 --- !u!33 &6726456166192269625
 MeshFilter:
   m_ObjectHideFlags: 0

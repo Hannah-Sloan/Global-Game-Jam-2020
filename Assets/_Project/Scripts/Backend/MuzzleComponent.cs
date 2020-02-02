@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MuzzleComponent : GunComponent
+public abstract class MuzzleComponent : GunComponent
 {
     // Start is called before the first frame update
     void Start()

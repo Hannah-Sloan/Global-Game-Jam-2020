@@ -5,6 +5,9 @@ using UnityEngine;
 public class Kickback : MuzzleComponent
 {
     public float value;
+
+    protected override object[] templateSubs => new object[] { value };
+
     // Start is called before the first frame update
     void Start()
     {
