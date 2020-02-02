@@ -94,6 +94,10 @@ public class Bullet : MonoBehaviour
                 lightningFxPrefab,
                 from,
                 Quaternion.LookRotation(to - from));
+            lightningFx.transform.localScale =  new Vector3(
+                lightningFx.transform.localScale.x,
+                lightningFx.transform.localScale.y,
+                Vector3.Distance(to, from) / 50);
             Destroy(lightningFx.gameObject, lightningFxPrefab.main.duration);
 
             DoTheThings((to-from)+offset, nearest, ref flags);
