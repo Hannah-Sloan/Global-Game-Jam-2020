@@ -10,14 +10,14 @@ public class BarrelHolder : Holder
         return 1;
     }
 
-    public override void AddMod(GunComponent mod)
-    {
-        var noMoreNulls = mods
-            .Where(x => x != null) 
-            .GroupBy(x => x.GetType())
-            .
-            .ToList();
-    }
+    //public override void AddMod(GunComponent mod)
+    //{
+    //    var noMoreNulls = mods
+    //        .Where(x => x != null) 
+    //        .GroupBy(x => x.GetType())
+    //        .
+    //        .ToList();
+    //}
 
     public override void RemoveMod(GunComponent mod)
     {

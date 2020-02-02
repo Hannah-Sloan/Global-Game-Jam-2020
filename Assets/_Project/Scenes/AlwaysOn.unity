@@ -170,7 +170,6 @@ MonoBehaviour:
     - {fileID: 3924446405502737741, guid: 2205bac084c36ed4e99bed3dc561a1bb, type: 3}
     - {fileID: 3924446405502737741, guid: e24bfdb7aad956f46b92fc754d050708, type: 3}
     - {fileID: 3924446405502737741, guid: 0eb8b3d83a4f3444dbc4f2339ea639ef, type: 3}
-  toAddLater: []
 --- !u!4 &343556133
 Transform:
   m_ObjectHideFlags: 0
@@ -228,6 +227,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4c837b120fbf448bfb8e5c3eb9ff9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &872394841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872394842}
+  m_Layer: 0
+  m_Name: BodySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872394842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872394841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.27, y: 1.01, z: 2.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459327884
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 349e52b3bb16208498217f1ae46f6460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uhOhBreaky: {fileID: 4163707357088000743, guid: 83738f96d7bf09a48b3066bc5c78455a,
+    type: 3}
+  Mag: {fileID: 1565687506}
+  Barrel: {fileID: 1598197008}
+  Body: {fileID: 872394842}
 --- !u!4 &1459327886
 Transform:
   m_ObjectHideFlags: 0
@@ -270,4 +304,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1565687505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565687506}
+  m_Layer: 0
+  m_Name: MagSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1565687506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565687505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.35, y: -1.14, z: 2.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1598197007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1598197008}
+  m_Layer: 0
+  m_Name: BarrelSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1598197008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598197007}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.19, y: 1.14, z: 2.28}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

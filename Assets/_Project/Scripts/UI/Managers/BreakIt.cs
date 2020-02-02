@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class BreakIt : Singleton<BreakIt>
 {
+    public GameObject uhOhBreaky;
+
+    public Transform Mag;
+    public Transform Barrel;
+    public Transform Body;
+
+
     public void OnBreak(System.Type componentTypeToBreak, System.Action done)
     {
         if (componentTypeToBreak != typeof(GunComponent))
@@ -13,25 +20,25 @@ public class BreakIt : Singleton<BreakIt>
             Debug.LogError(("THAT IS" + "NOT".Bold() + "A GUN COMPONENT").Size(35));
         }
 
+        Transform breakVisPos;
         //Check if barrel
         if (componentTypeToBreak == typeof(MagasineComponent))
         {
-
+            breakVisPos = Barrel;
         }
-
         //Check if mag
-        if (componentTypeToBreak == typeof(MuzzleComponent))
+        else if (componentTypeToBreak == typeof(MuzzleComponent))
         {
-
+            breakVisPos = Mag;
         }
-
         //Check if body
-        if (componentTypeToBreak == typeof(TriggerComponent))
+        else //Trigger Comp
         {
-
+            breakVisPos = Body;
         }
 
-        //TODO: Call done once fixed.
-        done();
+        var breaky = Instantiate(uhOhBreaky, breakVisPos);
+        breaky.GetComponent<FixMeBreakage>().Init(done);
+        breaky.transform.localPosition = Vector3.zero;
     }
 }
