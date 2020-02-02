@@ -128,6 +128,8 @@ MonoBehaviour:
   fireTickTime: 1
   fireDamage: 3
   maxFireTicks: 4
+  fireFxPrefab: {fileID: 687223635129999101, guid: 9dbe2046b53c83d418626432cce1ee6b,
+    type: 3}
 --- !u!195 &-637027334902083005
 NavMeshAgent:
   m_ObjectHideFlags: 0
