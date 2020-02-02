@@ -19,6 +19,7 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
         {
             if (uiON)
             {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
                 foreach (GameObject g in SceneManager.GetSceneByName("Main").GetRootGameObjects())
                 {
                     g.SetActive(true);
@@ -29,11 +30,11 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
                 }
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                if (UIOff != null) UIOff();
-                uiON = false;
+                StartCoroutine(UIWaitSecondLaunch());
             }
             else
             {
+                SceneManager.SetActiveScene(SceneManager.GetSceneByName("UI"));
                 foreach (GameObject g in SceneManager.GetSceneByName("Main").GetRootGameObjects())
                 {
                     g.SetActive(false);
@@ -47,6 +48,22 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
                 if (UIOn != null) UIOn();
                 uiON = true;
             }
+        }
+    }
+
+    public IEnumerator UIWaitSecondLaunch()
+    {
+        yield return null;
+
+        if (uiON)
+        {
+            if (UIOff != null) UIOff();
+            uiON = false;
+        }
+        else
+        {
+            if (UIOn != null) UIOn();
+            uiON = true;
         }
     }
 }

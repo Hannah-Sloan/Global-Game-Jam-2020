@@ -37,6 +37,7 @@ public class ComponentSpawner : MonoBehaviour
                     Random.Range(yRange.x, yRange.y)
                 );
 
-        Instantiate(comp, location, transform.rotation);
+        var toset = Instantiate(comp, transform);
+        toset.transform.position = location;
     }
 }

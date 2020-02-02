@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BreakIt : Singleton<BreakIt>
 {
@@ -32,6 +33,7 @@ public class BreakIt : Singleton<BreakIt>
     public void WreckIt()
     {
         if (ImGonnaWreckIt) ImGonnaWreckIt = false;
+        else return;
 
         Transform breakVisPos;
         //Check if barrel
@@ -50,8 +52,8 @@ public class BreakIt : Singleton<BreakIt>
             breakVisPos = Body;
         }
 
-        var breaky = Instantiate(uhOhBreaky, breakVisPos);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("UI"));
+        var breaky = Instantiate(uhOhBreaky, breakVisPos.position, Quaternion.identity);
         breaky.GetComponent<FixMeBreakage>().Init(componentTypeToBreak, done);
-        breaky.transform.localPosition = Vector3.zero;
     }
 }

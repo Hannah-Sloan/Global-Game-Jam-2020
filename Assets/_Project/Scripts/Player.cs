@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] Transform camera;
+    [SerializeField] new Transform camera;
     [SerializeField] float reach;
     [SerializeField] LayerMask pickupMask;
     // Start is called before the first frame update

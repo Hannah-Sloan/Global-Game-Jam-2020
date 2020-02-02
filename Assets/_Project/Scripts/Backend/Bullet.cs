@@ -140,7 +140,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Bullet On Trigger Enter");
         if (other.gameObject.CompareTag("Bullet")) return;
 
         Flags flags = Flags.nothing;

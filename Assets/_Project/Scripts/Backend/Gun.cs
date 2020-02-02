@@ -104,8 +104,8 @@ public class Gun : MonoBehaviour
 
     void Fire()
     {
-        if (breakTimer.CheckComplete()) Break();
-
+        if (breakTimer.CheckComplete())
+            Break();
         if (trigger.CanFire() && !broken)
         {
             LaunchProjectiles(

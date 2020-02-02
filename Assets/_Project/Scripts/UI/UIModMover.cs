@@ -25,7 +25,7 @@ public class UIModMover : MonoBehaviour
             Destroy(home.resident.gameObject);
         transform.parent = home.transform.parent;
         home.resident = this;
-        home.transform.parent.parent.GetComponent<Holder>().AddMod(transform.GetComponentInChildren<GunComponent>());
+        home.transform.parent.parent.GetComponent<InventoryHolder>().AddMod(transform.GetComponentInChildren<GunComponent>());
         transform.localPosition = Vector3.zero;
     }
 
