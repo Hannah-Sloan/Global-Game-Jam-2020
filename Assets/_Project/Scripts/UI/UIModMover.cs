@@ -55,6 +55,19 @@ public class UIModMover : MonoBehaviour
         transform.localPosition = Vector3.zero;
     }
 
+    public void Break()
+    {
+        home.resident = null;
+        home.transform.parent.parent.GetComponent<Holder>().RemoveMod(transform.GetComponentInChildren<GunComponent>());
+        transform.parent = null;
+
+        //Spawn explosion animation
+        Instantiate(BreakIt.Instance.explosionAnimation, transform.position, Quaternion.identity);
+
+        //Destroy this gameobject
+        Destroy(this.gameObject);
+    }
+
     private void Update()
     {
         potentialNewHome = ((Blank[])(FindObjectsOfType(typeof(Blank)))).

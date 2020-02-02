@@ -5,6 +5,8 @@ using UnityEngine;
 public class BreakIt : Singleton<BreakIt>
 {
     public GameObject uhOhBreaky;
+    public GameObject explosionAnimation;
+
 
     public Transform Mag;
     public Transform Barrel;
@@ -38,7 +40,7 @@ public class BreakIt : Singleton<BreakIt>
         }
 
         var breaky = Instantiate(uhOhBreaky, breakVisPos);
-        breaky.GetComponent<FixMeBreakage>().Init(done);
+        breaky.GetComponent<FixMeBreakage>().Init(componentTypeToBreak, done);
         breaky.transform.localPosition = Vector3.zero;
     }
 }
