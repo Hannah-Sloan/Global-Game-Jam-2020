@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionTemplate: Sometimes, you need your guns to feel a little meatier. This'll
-    do the trick for you, adding a kickback of {0} to your gun
+    do the trick for you, adding a kickback of {0:F2} to your gun
   value: 10
 --- !u!33 &-9152190985623211121
 MeshFilter:

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionTemplate: Feeling like you can't get through your clip fast enough?
-    Too many enemies coming at you at once? Try this to shoot {0} rounds per second!
+    Too many enemies coming at you at once? Try this to shoot {0:F2} rounds per second!
   value: 25
 --- !u!33 &-824177809150762135
 MeshFilter:

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionTemplate: 'Reloading sucks. We all know this. This will bring your reloading
-    time down to {0} seconds! '
+    time down to {0:F2} seconds! '
   value: 0.5
 --- !u!33 &6726456166192269625
 MeshFilter:

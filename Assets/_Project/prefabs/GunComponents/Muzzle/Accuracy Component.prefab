@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   descriptionTemplate: Tired of missing your marks? This will bring your gun's accuracy
-    up to {0}, so you can focus more on the enemies that matter
+    up to {0:P2}, so you can focus more on the enemies that matter
   value: 0.87
 --- !u!33 &-6232203530075153928
 MeshFilter:
