@@ -36,9 +36,10 @@ public class FixMeBreakage : MonoBehaviour
 
         foreach (var mod in holderToBreakFrom.mods)
         {
+            bool deleteProb = Random.Range(0, 5) >= 4;
 
+            //mod.GetComponent<UIModMover>().DestroyComponent();
         }
-        bool deleteProb = Random.Range(0, 5) >= 4;
 
         Destroy(this.gameObject);
     }
