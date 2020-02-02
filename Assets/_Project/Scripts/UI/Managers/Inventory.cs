@@ -43,16 +43,17 @@ public class Inventory : Singleton<Inventory>
 
     public void AddComponent(GunComponent newMod, int indexToInsertInto)
     {
-        //toAddLater[indexToInsertInto] = (new later(newMod, indexToInsertInto));
-        var nextOpen = toAddLater.FindIndex(x => x == null);
-        toAddLater[nextOpen] = new later(newMod, nextOpen);
-        return;
+        toAddLater[indexToInsertInto] = (new later(newMod, indexToInsertInto));
+        //var nextOpen = toAddLater.FindIndex(x => x == null);
+        //toAddLater[nextOpen] = new later(newMod, nextOpen);
+        //return;
     }
 
     private void RealAddComponent(GunComponent newMod, int indexToInsertInto)
     {
         GameObject toSpawn = null;
 
+        //Grabs icon from file.
         if (newMod is MagasineComponent)
         {
             if (newMod is AreaOfEffect)
@@ -94,21 +95,18 @@ public class Inventory : Singleton<Inventory>
         var modMover = token.GetComponent<UIModMover>();
         modMover.home = parent.GetComponentInChildren<Blank>();
         newMod.gameObject.transform.parent = token.transform;
-        //Destroy(newMod.GetComponent<MeshFilter>());
-        //Destroy(newMod.GetComponent<MeshRenderer>());
-        //Destroy(newMod.GetComponent<Collider>());
         modMover.AddToInv();
     }
 
     public void OnUI()
     {
-        foreach (var later in toAddLater)
+        for (int i = 0; i < toAddLater.Count; i++)
         {
-            if (later == null) continue;
-            RealAddComponent(later.newMod, later.indexToInsertInto);
+            if (toAddLater[i] == null) continue;
+            RealAddComponent(toAddLater[i].newMod, toAddLater[i].indexToInsertInto);
+            toAddLater[i] = null;
         }
-
         //toAddLater = FindObjectOfType<InventoryHolder>().mods.Select(x => x == null ? null : new later()).ToList();
-        toAddLater = new List<later>() { null, null, null, null, null };
+        //toAddLater = new List<later>() { null, null, null, null, null };
     }
 }

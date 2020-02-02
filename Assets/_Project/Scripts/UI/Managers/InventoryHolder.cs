@@ -8,4 +8,9 @@ public class InventoryHolder : Holder
     {
         return 4;
     }
+
+    public override void Start()
+    {
+        mods = new List<GunComponent>() { null, null, null, null, null};
+    }
 }

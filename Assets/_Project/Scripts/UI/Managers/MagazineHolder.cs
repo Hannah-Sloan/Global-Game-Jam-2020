@@ -31,18 +31,18 @@ public class MagazineHolder : Holder
 
     public override void AddMod(GunComponent mod)
     {
-        var nextOpen = mods.FindIndex(x => x == null);
-        mods[nextOpen] = mod;
-
+        base.AddMod(mod);
         Refresh();
     }
 
     public override void RemoveMod(GunComponent mod)
     {
-        var location = mods.FindIndex(x => x == mod);
-        //var trash = mods[location];
-        mods[location] = null;
-       // Destroy(trash);
+        base.RemoveMod(mod);
         Refresh();
+    }
+
+    public override void Start()
+    {
+        mods = new List<GunComponent>() { null, null, null, null };
     }
 }
