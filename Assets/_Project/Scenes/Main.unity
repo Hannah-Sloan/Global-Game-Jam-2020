@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Component Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 808199583894116612, guid: 5191cf71e53329e428253e423f1b01ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
       propertyPath: spawnRate
@@ -2951,6 +2956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataStore
       objectReference: {fileID: 0}
+    - target: {fileID: 5777085196356700920, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4df90253b17f0834cafdfccee48ddb7a, type: 3}
 --- !u!1 &1436278138
@@ -3514,6 +3524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522627511317966792, guid: 438fb7f0ea468cc4d8c0772c123b0651,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6522627511317966794, guid: 438fb7f0ea468cc4d8c0772c123b0651,
         type: 3}

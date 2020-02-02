@@ -11,6 +11,7 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
     public delegate void InventoryCB();
 
     public InventoryCB UIOn;
+    public InventoryCB UIOff;
 
     void Update()
     {
@@ -18,6 +19,18 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
         {
             if (uiON)
             {
+                foreach (GameObject g in SceneManager.GetSceneByName("Main").GetRootGameObjects())
+                {
+                    g.SetActive(true);
+                }
+                foreach (GameObject g in SceneManager.GetSceneByName("UI").GetRootGameObjects())
+                {
+                    g.SetActive(false);
+                }
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                if (UIOff != null) UIOff();
+                uiON = false;
             }
             else
             {
@@ -31,7 +44,8 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
                 }
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                UIOn();
+                if (UIOn != null) UIOn();
+                uiON = true;
             }
         }
     }
