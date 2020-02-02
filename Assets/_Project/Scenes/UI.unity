@@ -7290,6 +7290,7 @@ GameObject:
   - component: {fileID: 1902408224}
   - component: {fileID: 1902408223}
   - component: {fileID: 1902408222}
+  - component: {fileID: 1902408227}
   m_Layer: 0
   m_Name: InventoryHolder
   m_TagString: Untagged
@@ -8324,6 +8325,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1902408227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902408221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2ba60249e944a4785c132f1d910231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modTokens:
+  - name: Barrel
+    tokens:
+    - {fileID: 3924446405502737741, guid: 7268bcf9030461b4686a7a7cba5cec6c, type: 3}
+    - {fileID: 3924446405502737741, guid: 264742835fdde5242b2e5e8318249cfe, type: 3}
+    - {fileID: 3924446405502737741, guid: 8e3ead9b5e27fb8448ee5d2cb543ec5c, type: 3}
+    - {fileID: 3924446405502737741, guid: 05bc5749b3e8e3742938b6ccff1bc73c, type: 3}
+    - {fileID: 3924446405502737741, guid: 54c48b8710bc7274583194e62af4ee9a, type: 3}
+    - {fileID: 3924446405502737741, guid: be1879f15f65bb24296de7055149b67b, type: 3}
+  - name: Magazine
+    tokens:
+    - {fileID: 3924446405502737741, guid: 58d69ae224d7a4e4fbcce31ee54e89c3, type: 3}
+    - {fileID: 3924446405502737741, guid: 13800fdc0aec6f84db590230f1bd6c9c, type: 3}
+    - {fileID: 3924446405502737741, guid: 931a693f213526240994ebd5c667e693, type: 3}
+    - {fileID: 3924446405502737741, guid: 66ce3706453ed08478c40f9aaa8557c0, type: 3}
+  - name: Body
+    tokens:
+    - {fileID: 3924446405502737741, guid: 2205bac084c36ed4e99bed3dc561a1bb, type: 3}
+    - {fileID: 3924446405502737741, guid: e24bfdb7aad956f46b92fc754d050708, type: 3}
+    - {fileID: 3924446405502737741, guid: 0eb8b3d83a4f3444dbc4f2339ea639ef, type: 3}
 --- !u!1 &1934441851
 GameObject:
   m_ObjectHideFlags: 0
@@ -8482,7 +8515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c3e97db3eb20d4dab028cc1a9c2ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
   distToMods: 11.64
+  mover: {fileID: 0}
 --- !u!1 &2078686031
 GameObject:
   m_ObjectHideFlags: 0
