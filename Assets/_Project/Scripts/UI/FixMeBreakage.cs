@@ -34,14 +34,21 @@ public class FixMeBreakage : MonoBehaviour
             holderToBreakFrom = FindObjectOfType<BodyHolder>();
         }
 
+        //                  uh oh vvv this was somehow changed while using? everytime we hit fix?
+        List<UIModMover> toBreak = new List<UIModMover>();
         foreach (var mod in holderToBreakFrom.mods)
         {
             if (mod == null) continue;
             bool deleteProb = Random.Range(0, 5) >= 4;
 
-            mod.GetComponent<UIModMover>().Break();
+
+            toBreak.Add(mod.transform.parent.GetComponent<UIModMover>());
+        }
+        foreach (var deadGirlWalking in toBreak)
+        {
+            deadGirlWalking.Break();
         }
 
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 5f);
     }
 }
