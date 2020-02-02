@@ -40,8 +40,9 @@ public class Trigger : Singleton<Trigger>
         inClip = capacity;
     }
 
-    void UpdateValues()
+    public void UpdateValues()
     {
+        Debug.Log("Updating Trigger");
         foreach(var comp in components)
         {
             if (comp == null) continue;

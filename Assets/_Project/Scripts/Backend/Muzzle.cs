@@ -39,8 +39,9 @@ public class Muzzle : Singleton<Muzzle>
         
     }
 
-    void UpdateValues()
+    public void UpdateValues()
     {
+        Debug.Log("Updating Muzzle");
         foreach (var comp in components)
         {
             if (comp == null) continue;

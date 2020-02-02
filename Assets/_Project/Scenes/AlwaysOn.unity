@@ -251,6 +251,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataStore
       objectReference: {fileID: 0}
+    - target: {fileID: 7097006539923545405, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: components.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097006539923545405, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: components.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097006539923545405, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: components.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097006539923545405, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: components.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097006539923545405, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: components.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7097006539923545405, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: components.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498262173592466852, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: heavyFactor
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4df90253b17f0834cafdfccee48ddb7a, type: 3}
 --- !u!1 &756080284

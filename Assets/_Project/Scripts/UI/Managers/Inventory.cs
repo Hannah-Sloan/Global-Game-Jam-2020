@@ -42,7 +42,9 @@ public class Inventory : Singleton<Inventory>
 
     public void AddComponent(GunComponent newMod, int indexToInsertInto)
     {
-        toAddLater[indexToInsertInto] = (new later(newMod, indexToInsertInto));
+        //toAddLater[indexToInsertInto] = (new later(newMod, indexToInsertInto));
+        var nextOpen = toAddLater.FindIndex(x => x == null);
+        toAddLater[nextOpen] = new later(newMod, nextOpen);
         return;
     }
 
@@ -91,9 +93,9 @@ public class Inventory : Singleton<Inventory>
         var modMover = token.GetComponent<UIModMover>();
         modMover.home = parent.GetComponentInChildren<Blank>();
         newMod.gameObject.transform.parent = token.transform;
-        Destroy(newMod.GetComponent<MeshFilter>());
-        Destroy(newMod.GetComponent<MeshRenderer>());
-        Destroy(newMod.GetComponent<Collider>());
+        //Destroy(newMod.GetComponent<MeshFilter>());
+        //Destroy(newMod.GetComponent<MeshRenderer>());
+        //Destroy(newMod.GetComponent<Collider>());
         modMover.AddToInv();
     }
 
