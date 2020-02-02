@@ -49,6 +49,6 @@ public class FixMeBreakage : MonoBehaviour
             deadGirlWalking.Break();
         }
 
-        Destroy(this.gameObject, 5f);
+        Destroy(this.gameObject);
     }
 }
