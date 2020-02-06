@@ -58,6 +58,7 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             uiON = false;
+            if (UIOff != null) UIOff();
         }
         else
         {
