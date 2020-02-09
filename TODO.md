@@ -44,7 +44,6 @@
 - R to reload early
 
 ### "Quick" Fixes
-- add coliders to enviroment
 - maybe make distribution of mod drop types more consistent? aka dont drop same type (color type) twice
 - why are bullets spawned in the always on scene?
 - slow ai
