@@ -44,7 +44,6 @@
 
 ### "Quick" Fixes
 - maybe make distribution of mod drop types more consistent? aka dont drop same type (color type) twice
-- why are bullets spawned in the always on scene?
 - slow ai
 - add real quit button
 - Copy over red orb touchups to other orbs
