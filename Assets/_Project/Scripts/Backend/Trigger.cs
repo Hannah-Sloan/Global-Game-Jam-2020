@@ -16,13 +16,11 @@ public class Trigger : Singleton<Trigger>
     
     public TriggerComponent[] components = new TriggerComponent[Gun.COMPONENT_NUMBER];
 
-    #region cached_data
     int capacity;
     float fireRate;
     float reloadTime;
 
-    float shotTimeout => 1 / fireRate;
-    #endregion
+    //float shotTimeout => 1 / fireRate;
 
     Timer timeoutTimer;
     bool reloading = false;
@@ -35,9 +33,8 @@ public class Trigger : Singleton<Trigger>
         fireRate = default_fireRate;
         reloadTime = default_reloadTime;
 
+        timeoutTimer = Timer.CreateTimer(1 / fireRate);
         UpdateValues();
-        timeoutTimer = Timer.CreateTimer(shotTimeout);
-        inClip = capacity;
     }
 
     public void UpdateValues()
@@ -59,6 +56,12 @@ public class Trigger : Singleton<Trigger>
                 reloadTime = (comp as ReloadTime).value;
             }
         }
+
+        Destroy(timeoutTimer.gameObject);
+        timeoutTimer = Timer.CreateTimer(1 / fireRate);
+        inClip = capacity;
+        if (OnAmmoChange != null)
+            OnAmmoChange(inClip);
     }
 
     // Update is called once per frame

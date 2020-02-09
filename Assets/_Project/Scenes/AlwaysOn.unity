@@ -247,6 +247,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4468199143777602051, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: default_capacity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468199143777602051, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: default_fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468199143777602051, guid: 4df90253b17f0834cafdfccee48ddb7a,
+        type: 3}
+      propertyPath: default_reloadTime
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5777085196356700920, guid: 4df90253b17f0834cafdfccee48ddb7a,
         type: 3}
       propertyPath: m_Name
