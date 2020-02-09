@@ -41,7 +41,7 @@ public class ComponentSpawner : MonoBehaviour
 
         var toset = Instantiate(comp, transform);
 
-        Debug.Log($"isRandomized? {randomizeDrops}");
+        //Debug.Log($"isRandomized? {randomizeDrops}");
 
         if (randomizeDrops && isTiered<int>(toset))
         {
@@ -68,10 +68,10 @@ public class ComponentSpawner : MonoBehaviour
     {
         
         var val = typeof(ITierable<T>).IsAssignableFrom(gc.GetType());
-        Debug.Log(
-            $"type: {gc.GetType()}, " +
-            $"t: {typeof(T)}, " +
-            $"val: {val}");
+        //Debug.Log(
+        //    $"type: {gc.GetType()}, " +
+        //    $"t: {typeof(T)}, " +
+        //    $"val: {val}");
         return val;
     }
 
@@ -97,7 +97,7 @@ public class ComponentSpawner : MonoBehaviour
         }
 
         var chosenTier =  tierPool[Random.Range(0, tierPool.Count)];
-        Debug.Log($"tier: {chosenTier}");
+        //Debug.Log($"tier: {chosenTier}");
         return chosenTier;
     }
 }
