@@ -56,6 +56,7 @@ public class Enemy : MonoBehaviour
             if (fireFx != null) Destroy(fireFx.gameObject);
         }
 
+        //Don't worry if this errors, it's just running on the frame the ai dies.
         agent.SetDestination(player.transform.position);
     }
 

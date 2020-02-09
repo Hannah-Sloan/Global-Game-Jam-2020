@@ -70,7 +70,7 @@ public class Bullet : MonoBehaviour
 
     IEnumerator DoLightning(Enemy enemy, Vector3 offset)
     {
-        Debug.Log($"enemy: {enemy}");
+        //Debug.Log($"enemy: {enemy}");
         List<Enemy> blacklist = new List<Enemy>();
         // jump to nearest near-enough
         var prev_enemy = enemy;
