@@ -1,13 +1,13 @@
 # TODO
 ## A list of tasks to be completed
 
-###FIX KICKBACK 
+### FIX KICKBACK 
 wth why is kick back so high 0.0
 WHY IS KICKBACK SO HIGH!?
 does kickback not apply upward or is gravity just that strong?
 I TOOK THE MOD OFF WHAT IS THIS KICKBACK??!?!?!?!?
 
-###Priority 1
+### Priority 1
 fix 'ui' scaling
 what is up with break chance? 100% destroy chance should be much lower 0^0
 add hit animation
@@ -15,16 +15,16 @@ add damage animation
 Pool lightning/Fire particle effect for less performance hit
 Give AI less health, make sure enough spawn
 
-###Priority 2
+### Priority 2
 add level up notification
 Have enemies actually do something to you
 Denote level of orb (mod) (brightness?)
 
-###Priority 3
+### Priority 3
 Make orbs despawn - crowded play area is overwhelming
 Leave blood & Dead bodies around
 
-###Priority 4
+### Priority 4
 add removing mods from inventory space
 add better broken notification
 add animations
@@ -39,7 +39,7 @@ Label gun sections
 Include visual modification of gun
 increase max pointlight count (or maybe not performance is bad enough as it is)
 
-###"Quick" Fixes
+### "Quick" Fixes
 Don't start the ammo crazy high if add ons significantly lower it
 remove weird copypasta as default text
 add coliders to enviroment
@@ -50,7 +50,7 @@ add real quit button
 what is ping debug?
 Copy over red orb touchups to other orbs
 
-###Questions
+### Questions
 no good reload upgrades
 I think when you 'replace' what is in an inventory slot you delete what you're picking up
 bug where you can 'drop' not drop a mod in mid ui
