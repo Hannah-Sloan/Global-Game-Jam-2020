@@ -98,8 +98,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
 
     void RestartSpawners(){
         StopAllCoroutines();
-        Debug.Log("String Spawners");
-        StartCoroutine(Ping());
+        //StartCoroutine(Ping());
 
         foreach (var data in spawnDatas)
         {
