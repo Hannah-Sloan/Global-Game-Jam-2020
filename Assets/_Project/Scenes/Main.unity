@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
       propertyPath: gunComponents.Array.size
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
@@ -213,13 +213,13 @@ PrefabInstance:
         type: 3}
       propertyPath: gunComponents.Array.data[9]
       value: 
-      objectReference: {fileID: 1416550981148604871, guid: ca7e37536d94eef48bdc812d83a66389,
+      objectReference: {fileID: 8785511831936389833, guid: a693e9eaec48bb64f8f23db952248ca3,
         type: 3}
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
       propertyPath: gunComponents.Array.data[10]
       value: 
-      objectReference: {fileID: 8785511831936389833, guid: a693e9eaec48bb64f8f23db952248ca3,
+      objectReference: {fileID: 7558996111224702042, guid: 731b4c273ab938a4ea113a2c76da91e9,
         type: 3}
     - target: {fileID: 2150546502070932640, guid: 5191cf71e53329e428253e423f1b01ec,
         type: 3}
