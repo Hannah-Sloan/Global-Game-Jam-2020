@@ -23,7 +23,6 @@
 ### Priority 3
 - Make orbs despawn - crowded play area is overwhelming
 - Leave blood & Dead bodies around
-- Shrink enemy hitbox or don't collide w/ player
 - Pickup orbs while on the move
 
 ### Priority 4
