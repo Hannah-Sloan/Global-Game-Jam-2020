@@ -2710,6 +2710,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8491911381225590585, guid: 1661e024b67cc9542981d82dd936b669,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491911381225590585, guid: 1661e024b67cc9542981d82dd936b669,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491911381225590586, guid: 1661e024b67cc9542981d82dd936b669,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491911381225590587, guid: 1661e024b67cc9542981d82dd936b669,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8491911381225590589, guid: 1661e024b67cc9542981d82dd936b669,
         type: 3}
       propertyPath: gunTime
@@ -2725,6 +2745,11 @@ PrefabInstance:
       propertyPath: prompt
       value: 
       objectReference: {fileID: 596915915}
+    - target: {fileID: 8491911381225590593, guid: 1661e024b67cc9542981d82dd936b669,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8491911381721211122, guid: 1661e024b67cc9542981d82dd936b669,
         type: 3}
       propertyPath: far clip plane
