@@ -10,8 +10,7 @@ public class Bootstrapper : MonoBehaviour
     {
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         SceneManager.LoadScene("Main", LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("UI"));
-        
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
     }
 
     // Start is called before the first frame update
