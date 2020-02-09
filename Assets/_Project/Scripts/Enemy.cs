@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] int maxFireTicks;
     [SerializeField] ParticleSystem fireFxPrefab;
     [SerializeField] ParticleSystem blood; 
+    [SerializeField] Color hitColor;
+    [SerializeField] int impactLength = 2;
+    [SerializeField] float hitBrightnessScaling = 1;
 
     int health;
     bool isOnFire = false;
@@ -21,6 +24,7 @@ public class Enemy : MonoBehaviour
     Player player;
     Rigidbody rb;
     ParticleSystem fireFx = null;
+    Material myMat;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody>();
+        myMat = GetComponent<MeshRenderer>().material;
     }
 
     // Update is called once per frame
@@ -64,6 +69,17 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health = Mathf.Max(health - damage, 0);
+        StartCoroutine(HitAnimation(damage));
+    }
+
+    IEnumerator HitAnimation(int damage)
+    {
+        myMat.SetColor("_EmissionColor", hitColor * damage * hitBrightnessScaling);
+        for (int i = 0; i < impactLength; i++)
+        {
+            yield return null;
+        }
+        myMat.SetColor("_EmissionColor", hitColor * 0);
     }
 
     public void Ignite()
