@@ -2,6 +2,9 @@
 ## A list of tasks to be completed
 
 ### FIX KICKBACK 
+Currently the 'fix' is to just not spawn kickback mods
+
+similar to how we do not spawn knockback mods
 - wth why is kick back so high 0.0
 - WHY IS KICKBACK SO HIGH!?
 - does kickback not apply upward or is gravity just that strong?
