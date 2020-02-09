@@ -57,7 +57,7 @@ public class Gun : MonoBehaviour
 
     void Break()
     {
-        Debug.Log("Broken!");
+        Debug.Log("Broken!".Color(Color.red));
         broken = true;
         breakTimer.TimerStop();
         breakTimer.ResetTimer();
