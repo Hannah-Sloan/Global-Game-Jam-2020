@@ -63,7 +63,7 @@ public class Bullet : MonoBehaviour
             .OrderBy(e => (pos - e.transform.position).sqrMagnitude)
             .FirstOrDefault();
 
-        Debug.Log($"nearest: {nearest}");
+        //Debug.Log($"nearest: {nearest}");
 
         return nearest;
     }
