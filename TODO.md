@@ -47,7 +47,6 @@
 - why are bullets spawned in the always on scene?
 - slow ai
 - add real quit button
-- what is ping debug?
 - Copy over red orb touchups to other orbs
 
 ### Questions
