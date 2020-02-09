@@ -41,6 +41,7 @@
 - Include visual modification of gun
 - increase max pointlight count (or maybe not performance is bad enough as it is)
 - Kill / Do damage on head jump
+- R to reload early
 
 ### "Quick" Fixes
 - Don't start the ammo crazy high if add ons significantly lower it
