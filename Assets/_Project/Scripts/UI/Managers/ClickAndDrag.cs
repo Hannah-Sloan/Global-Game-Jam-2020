@@ -39,7 +39,10 @@ public class ClickAndDrag : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 var maybeMover = hit.collider.GetComponent<UIModMover>();
-                if (maybeMover != null) OnHover(maybeMover);
+                if (maybeMover != null)
+                    OnHover(maybeMover);
+                else
+                    flavourText.text = "";
 
                 if (Input.GetMouseButtonDown(0))
                 {
