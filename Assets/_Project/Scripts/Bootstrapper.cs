@@ -5,23 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Bootstrapper : MonoBehaviour
 {
-
     private void Awake()
     {
         SceneManager.LoadScene("UI", LoadSceneMode.Additive);
         SceneManager.LoadScene("Main", LoadSceneMode.Additive);
+    }
+
+    private void Start()
+    {
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Main"));
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
