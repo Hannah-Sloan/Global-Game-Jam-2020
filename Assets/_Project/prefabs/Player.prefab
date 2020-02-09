@@ -198,6 +198,8 @@ MonoBehaviour:
   pickupMask:
     serializedVersion: 2
     m_Bits: 1024
+  inv: {fileID: 0}
+  prompt: {fileID: 0}
 --- !u!114 &8491911381225590589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +215,7 @@ MonoBehaviour:
   player: {fileID: 8491911381225590593}
   default_gun_strength: 1000
   gunTime: 10
+  kickbackScale: 0.1
   firePositon: {fileID: 8491911381101164865}
 --- !u!1 &8491911381721211120
 GameObject:
