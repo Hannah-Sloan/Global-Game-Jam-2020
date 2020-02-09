@@ -23,6 +23,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] float default_gun_strength;
     [SerializeField] float gunTime;
+    [SerializeField] float kickbackScale = .1f;
 
     public Transform firePositon;
 
@@ -83,7 +84,7 @@ public class Gun : MonoBehaviour
 
     void LaunchProjectiles(LaunchConfig config)
     {
-        player.GetComponent<CPMPlayer>().playerVelocity -= transform.forward * (float)(config.kickback);
+        player.GetComponent<CPMPlayer>().playerVelocity -= transform.forward * (float)(config.kickback*kickbackScale);
 
         Bullet[] bullets = new Bullet[config.numberOfProjectiles];
         bullets[0] = config.bullet;
