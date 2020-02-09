@@ -11,8 +11,6 @@ similar to how we do not spawn knockback mods
 - I TOOK THE MOD OFF WHAT IS THIS KICKBACK??!?!?!?!?
 
 ### Priority 1
-- add hit animation
-- add damage animation
 - Pool lightning/Fire particle effect for less performance hit
 
 ### Priority 2
