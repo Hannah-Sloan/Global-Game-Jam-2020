@@ -9,9 +9,11 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
     bool uiON = false;
 
     public delegate void InventoryCB();
+    public delegate void MainCB();
 
     public InventoryCB UIOn;
     public InventoryCB UIOff;
+    public MainCB MainON;
 
     void Update()
     {
@@ -58,7 +60,7 @@ public class UIEnableDisable : Singleton<UIEnableDisable>
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             uiON = false;
-            if (UIOff != null) UIOff();
+            if (MainON != null) MainON();
         }
         else
         {

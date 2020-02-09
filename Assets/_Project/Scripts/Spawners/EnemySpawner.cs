@@ -40,7 +40,7 @@ public class EnemySpawner : Singleton<EnemySpawner>
             location = transChild,
         });
         }
-        UIEnableDisable.Instance.UIOff += RestartSpawners;
+        UIEnableDisable.Instance.MainON += RestartSpawners;
         RestartSpawners();
     }
 
