@@ -23,6 +23,7 @@
 ### Priority 3
 - Make orbs despawn - crowded play area is overwhelming
 - Leave blood & Dead bodies around
+- Shrink enemy hitbox or don't collide w/ player
 
 ### Priority 4
 - add removing mods from inventory space
@@ -38,6 +39,7 @@
 - Label gun sections
 - Include visual modification of gun
 - increase max pointlight count (or maybe not performance is bad enough as it is)
+- Kill / Do damage on head jump
 
 ### "Quick" Fixes
 - Don't start the ammo crazy high if add ons significantly lower it
