@@ -8,7 +8,6 @@
 - I TOOK THE MOD OFF WHAT IS THIS KICKBACK??!?!?!?!?
 
 ### Priority 1
-- fix 'ui' scaling
 - what is up with break chance? 100% destroy chance should be much lower 0^0
 - add hit animation
 - add damage animation
