@@ -13,7 +13,6 @@
 - add hit animation
 - add damage animation
 - Pool lightning/Fire particle effect for less performance hit
-- Give AI less health, make sure enough spawn
 
 ### Priority 2
 - add level up notification
@@ -44,7 +43,6 @@
 
 ### "Quick" Fixes
 - maybe make distribution of mod drop types more consistent? aka dont drop same type (color type) twice
-- slow ai
 - add real quit button
 - Copy over red orb touchups to other orbs
 
