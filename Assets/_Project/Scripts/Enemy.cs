@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] int fireDamage;
     [SerializeField] int maxFireTicks;
     [SerializeField] ParticleSystem fireFxPrefab;
+    [SerializeField] ParticleSystem blood; 
 
     int health;
     bool isOnFire = false;
@@ -76,6 +77,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(fireTimer.gameObject);
+        Instantiate(blood, transform.position, Quaternion.identity);
         EnemySpawner.Instance.EnemyKilled();
         Destroy(gameObject);
     }
