@@ -93,6 +93,7 @@ public class ComponentSpawner : MonoBehaviour
             if (EnemySpawner.Instance.totalKills + 1 >= Mathf.Pow(tierScaleFactor, i))
             {
                 tierPool.Add(i);
+                //TODO: PLAY LEVEL UP ANIMATION
             }
         }
 
