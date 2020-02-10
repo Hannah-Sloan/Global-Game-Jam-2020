@@ -10,7 +10,7 @@ public class ComponentSpawner : MonoBehaviour
     [SerializeField] Vector2 xRange;
     [SerializeField] Vector2 yRange;
     [SerializeField] bool randomizeDrops;
-    [SerializeField] float tierScaleFactor;
+    [SerializeField] public float tierScaleFactor;
     float spawnTimeout => 1 / spawnRate;
     Timer spawnTimer;
 
@@ -93,7 +93,6 @@ public class ComponentSpawner : MonoBehaviour
             if (EnemySpawner.Instance.totalKills + 1 >= Mathf.Pow(tierScaleFactor, i))
             {
                 tierPool.Add(i);
-                //TODO: PLAY LEVEL UP ANIMATION
             }
         }
 
