@@ -14,7 +14,6 @@ similar to how we do not spawn knockback mods
 - Pool lightning/Fire particle effect for less performance hit
 
 ### Priority 2
-- add level up notification
 - Have enemies actually do something to you
 - Denote level of orb (mod) (brightness?)
 
