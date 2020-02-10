@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 12
   fireTickTime: 1
-  fireDamage: 3
+  fireDamage: 1
   maxFireTicks: 4
   fireFxPrefab: {fileID: 687223635129999101, guid: 9dbe2046b53c83d418626432cce1ee6b,
     type: 3}

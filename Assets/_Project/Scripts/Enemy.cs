@@ -26,6 +26,9 @@ public class Enemy : MonoBehaviour
     ParticleSystem fireFx = null;
     Material myMat;
 
+    bool done = true;
+    bool die = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,8 @@ public class Enemy : MonoBehaviour
         player = FindObjectOfType<Player>();
         rb = GetComponent<Rigidbody>();
         myMat = GetComponent<MeshRenderer>().material;
+
+        die = false;
     }
 
     // Update is called once per frame
@@ -45,7 +50,10 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Die();
+            if (done)
+                Die();
+            else
+                die = true;
         }
 
         if (isOnFire && fireTimer.CheckAndReset())
@@ -74,12 +82,16 @@ public class Enemy : MonoBehaviour
 
     IEnumerator HitAnimation(int damage)
     {
+        done = false;
         myMat.SetColor("_EmissionColor", hitColor * damage * hitBrightnessScaling);
         for (int i = 0; i < impactLength; i++)
         {
             yield return null;
         }
         myMat.SetColor("_EmissionColor", hitColor * 0);
+        done = true;
+        if (die)
+            Die();
     }
 
     public void Ignite()
