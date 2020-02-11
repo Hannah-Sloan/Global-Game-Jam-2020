@@ -49,3 +49,7 @@ similar to how we do not spawn knockback mods
 - I think when you 'replace' what is in an inventory slot you delete what you're picking up
 - bug where you can 'drop' not drop a mod in mid ui
 - Should shooting 68 bullets take 68 ammo??
+
+### Bugs
+- Fix multi bullet not doing damage
+- Fix removal of mod not always updating
