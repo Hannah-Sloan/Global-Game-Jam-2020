@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-751647491339031334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5226951374533824441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a9cb5106e40744f81a5968ea9471a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionTemplate: Sometimes, you need your guns to feel a little meatier. This'll
+    do the trick for you, adding a kickback of {0:F2} to your gun
+  value: 10
+--- !u!1001 &1477831390445241248
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632556801738738713, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_Name
+      value: Kickback
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ed9dfde54281ce41acaebc30ca0c0db, type: 3}
+--- !u!1 &5226951374533824441 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6632556801738738713, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1477831390445241248}
+  m_PrefabAsset: {fileID: 0}

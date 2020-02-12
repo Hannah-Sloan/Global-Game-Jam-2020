@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6872511662007879903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267932168705316912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6cb4fbaeab9324d8857f5789c6b8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionTemplate: Feeling like you can't get through your clip fast enough?
+    Too many enemies coming at you at once? Try this to shoot {0:F2} rounds per second!
+  value: 25
+--- !u!1001 &8401187807789419346
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1174280619131212642, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_Name
+      value: FireRate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4947675783845551807, guid: 0830afc804e346c429d27da808bd71b4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -2238219431619572661, guid: 0830afc804e346c429d27da808bd71b4, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0830afc804e346c429d27da808bd71b4, type: 3}
+--- !u!1 &7267932168705316912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1174280619131212642, guid: 0830afc804e346c429d27da808bd71b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8401187807789419346}
+  m_PrefabAsset: {fileID: 0}

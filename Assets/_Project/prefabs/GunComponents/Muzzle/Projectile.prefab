@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8967991098032887386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8763446054628237075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a6158b1692fc8458ac9722d4afbab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  descriptionTemplate: One bullet is nice. But how about {0}? Add some extra fire
+    powre to your arsenal and mow down all your foes
+  value: 15
+--- !u!1001 &2708229650736681738
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 642288152918524356, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632556801738738713, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+        type: 3}
+      propertyPath: m_Name
+      value: Projectile
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ed9dfde54281ce41acaebc30ca0c0db, type: 3}
+--- !u!1 &8763446054628237075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6632556801738738713, guid: 4ed9dfde54281ce41acaebc30ca0c0db,
+    type: 3}
+  m_PrefabInstance: {fileID: 2708229650736681738}
+  m_PrefabAsset: {fileID: 0}

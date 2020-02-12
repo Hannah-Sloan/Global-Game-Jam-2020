@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4490476553355146504
+--- !u!1 &3161142365241320282
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,63 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7517735154520261701}
-  - component: {fileID: 7873624224001400662}
-  - component: {fileID: 3711732453749789909}
-  - component: {fileID: -4875907118876340685}
-  - component: {fileID: -8329991219385180361}
-  - component: {fileID: -7375980830490891801}
+  - component: {fileID: 9168463330837147271}
+  - component: {fileID: 2151384716969606091}
+  - component: {fileID: 5540290955746958426}
+  - component: {fileID: 4392163225337821778}
+  - component: {fileID: -1026753153412575964}
   m_Layer: 10
-  m_Name: Fire Effect
+  m_Name: ComponentPrefabParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7517735154520261701
+--- !u!4 &9168463330837147271
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490476553355146504}
+  m_GameObject: {fileID: 3161142365241320282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 2221818656241224667}
+  - {fileID: 7870984032663309524}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7873624224001400662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490476553355146504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bbbb896982b3324f9cebd2985db767f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  descriptionTemplate: Lights the target on fire! Does damage over time, dependent
-    on how susceptible to fire an enemy is
---- !u!33 &3711732453749789909
+--- !u!33 &2151384716969606091
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490476553355146504}
+  m_GameObject: {fileID: 3161142365241320282}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &-4875907118876340685
+--- !u!23 &5540290955746958426
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490476553355146504}
+  m_GameObject: {fileID: 3161142365241320282}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -76,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: de85c2fd0ea2f6245862ec9b40b8bfa3, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,31 +82,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &-8329991219385180361
-SphereCollider:
+--- !u!65 &4392163225337821778
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490476553355146504}
+  m_GameObject: {fileID: 3161142365241320282}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1.3, y: 1.3, z: 1.3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!108 &-7375980830490891801
+--- !u!108 &-1026753153412575964
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490476553355146504}
+  m_GameObject: {fileID: 3161142365241320282}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.9215687, g: 0.28627452, b: 0.28627452, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 2
   m_Range: 13
   m_SpotAngle: 30
@@ -171,17 +156,32 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1001 &2614303484891232580
+--- !u!1001 &6316853895229537867
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7517735154520261701}
+    m_TransformParent: {fileID: 9168463330837147271}
     m_Modifications:
+    - target: {fileID: 680071138510538309, guid: 66a6791f1b33ed9438240cf08cd74e0d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680071138510538309, guid: 66a6791f1b33ed9438240cf08cd74e0d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680071138510538309, guid: 66a6791f1b33ed9438240cf08cd74e0d,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2617904092285095494, guid: 66a6791f1b33ed9438240cf08cd74e0d,
         type: 3}
       propertyPath: m_Name
-      value: Magasine
+      value: Particle Effect
       objectReference: {fileID: 0}
     - target: {fileID: 4220615436877296287, guid: 66a6791f1b33ed9438240cf08cd74e0d,
         type: 3}
@@ -240,9 +240,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a6791f1b33ed9438240cf08cd74e0d, type: 3}
---- !u!4 &2221818656241224667 stripped
+--- !u!4 &7870984032663309524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4220615436877296287, guid: 66a6791f1b33ed9438240cf08cd74e0d,
     type: 3}
-  m_PrefabInstance: {fileID: 2614303484891232580}
+  m_PrefabInstance: {fileID: 6316853895229537867}
   m_PrefabAsset: {fileID: 0}
