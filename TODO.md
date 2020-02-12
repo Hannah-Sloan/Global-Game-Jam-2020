@@ -49,7 +49,13 @@ similar to how we do not spawn knockback mods
 - I think when you 'replace' what is in an inventory slot you delete what you're picking up
 - bug where you can 'drop' not drop a mod in mid ui
 - Should shooting 68 bullets take 68 ammo??
+- Normalize component drops, red twice as likely as white since double the number of components
 
 ### Bugs
 - Fix multi bullet not doing damage
 - Fix removal of mod not always updating
+
+### Balance
+- Hard (long) to find component of x type
+- Component break chance too low
+- Enemy spawning doesn't respond to high kill rate enough, and is too high when killing no one.
