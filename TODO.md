@@ -42,7 +42,6 @@ similar to how we do not spawn knockback mods
 ### "Quick" Fixes
 - maybe make distribution of mod drop types more consistent? aka dont drop same type (color type) twice
 - add real quit button
-- Copy over red orb touchups to other orbs
 
 ### Questions
 - no good reload upgrades
