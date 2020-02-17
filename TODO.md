@@ -53,6 +53,7 @@ similar to how we do not spawn knockback mods
 ### Bugs
 - Fix multi bullet not doing damage
 - Fix removal of mod not always updating
+- Scrolling item selector during pickup doesn't work on linux
 
 ### Balance
 - Hard (long) to find component of x type
