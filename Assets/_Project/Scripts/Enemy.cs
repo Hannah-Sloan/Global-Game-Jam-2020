@@ -23,7 +23,8 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     Player player;
     Rigidbody rb;
-    ParticleSystem fireFx = null;
+    //ParticleSystem fireFx = null;
+    ObjectPoolsManager.Handle fireFx;
     Material myMat;
 
     bool done = true;
@@ -67,7 +68,11 @@ public class Enemy : MonoBehaviour
             isOnFire = false;
             fireTimer.TimerStop();
             fireTimer.ResetTimer();
-            if (fireFx != null) Destroy(fireFx.gameObject);
+            if (fireFx != null) {
+                //Debug.Log(fireFx);
+                ObjectPoolsManager.Instance.Return(ref fireFx);
+                //Debug.Log(fireFx);
+            }
         }
 
         //Don't worry if this errors, it's just running on the frame the ai dies.
@@ -96,7 +101,8 @@ public class Enemy : MonoBehaviour
 
     public void Ignite()
     {
-        fireFx = Instantiate(fireFxPrefab, transform);
+        Debug.Log("Setting fire");
+        fireFx = ObjectPoolsManager.Instance.Borrow(transform, fireFxPrefab);
         fireTimer.TimerStart();
         isOnFire = true;
         fireTicks = 0;
@@ -106,6 +112,7 @@ public class Enemy : MonoBehaviour
     {
         Destroy(fireTimer.gameObject);
         Instantiate(blood, transform.position, Quaternion.identity);
+        if (fireFx != null) ObjectPoolsManager.Instance.Return(ref fireFx);
         EnemySpawner.Instance.EnemyKilled();
         Destroy(gameObject);
     }
