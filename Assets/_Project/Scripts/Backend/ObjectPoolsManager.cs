@@ -6,20 +6,18 @@ public class ObjectPoolsManager : Singleton<ObjectPoolsManager>
 {
     Dictionary<Component, ObjectPool> pools = new Dictionary<Component, ObjectPool>(); 
 
-    // Doesn't need to generic... the type gets lost in all the juggling, unfornately
-    //public Handle Instantiate<T>(Transform parent, T prefab, Vector3? position = null, Quaternion? rotation = null) where T : MonoBehaviour
-    //public Handle Instantiate(Transform parent, Component prefab, Vector3? position = null, Quaternion? rotation = null)
     public Handle Borrow(Transform parent, Component prefab, Vector3? position = null, Quaternion? rotation = null)
     {
-        if (!pools.ContainsKey(prefab)){
+        if (!pools.ContainsKey(prefab)){ // make a pool if it doesn't already exist
             pools[prefab] = new ObjectPool(prefab);
         }
-        var pool = pools.GetOrNull(prefab);
+        var pool = pools[prefab];
     
         // acquire the object
         var borrowed = pool.Borrow();
         var obj = borrowed.value;
 
+        // Configure the object
         obj.gameObject.transform.parent = parent;
         obj.gameObject.transform.localPosition = position ?? prefab.transform.localPosition;
         obj.gameObject.transform.localRotation = rotation ?? prefab.transform.localRotation;
@@ -27,37 +25,77 @@ public class ObjectPoolsManager : Singleton<ObjectPoolsManager>
         return borrowed;
     }
 
-    //public void Destroy(ref Handle handle)
     public void Return(ref Handle handle)
     {
-        if (handle is HandleImpl){
+        if (handle is HandleImpl){ // Make sure we're actually getting something back
             var impl = handle as HandleImpl;
-            // Debug.Log(impl);
-            // foreach (var kv in pools){
-            //     Debug.Log(kv.Key);
-            // }
-            var pool = pools[impl.key];
-            impl.value.transform.parent = transform;
+            var pool = pools[impl.key]; // get the right object pool
+            impl.value.transform.parent = transform; // return the object here, so it doesn't get destroyed
             pool.Return(impl.id);
-            handle = null;
+            handle = null; // invalidate the callers reference to the handle
+            // Should maybe make this a flag inside of HandleImpl, so that if they somehow keep a reference and try to use it it doesn't work
         }
     }
 
-    public abstract class Handle{
-        public readonly Component value;
-
-        public Handle(Component val){
-            value = val;
+    // Not the preffered way of getting access to your component...
+    public T UmanagedDeref<T>(Handle handle) where T : Component{
+        if (handle is HandleImpl){ // Make sure we're actually getting something back
+            var impl = handle as HandleImpl;
+            if (impl.active) // make sure the reference is valid
+                if (impl.value is T) // Make sure we're actually getting the thing asked for...
+                    return impl.value as T;
+            
         }
+
+        return null; // default path
     }
 
-    sealed class HandleImpl : Handle{
+    public void CallIfValid(Handle handle, System.Action<Component> callback){
+        if (handle is HandleImpl){ // Make sure we're actually getting something back
+            var impl = handle as HandleImpl;
+            if (impl.active){ // make sure the reference is valid
+                callback(impl.value);
+            }
+        }
+    }
+    
+    public TResult CallIfValid<TResult>(Handle handle, System.Func<Component, TResult> callback) where TResult: class{
+        if (handle is HandleImpl){ // Make sure we're actually getting something back
+            var impl = handle as HandleImpl;
+            if (impl.active){ // make sure the reference is valid
+                return callback(impl.value);
+            }
+        }
+
+        return null;
+    }
+
+    public TResult? CallIfValid<TResult>(Handle handle, System.Func<Component, TResult?> callback) where TResult: struct{
+        if (handle is HandleImpl){ // Make sure we're actually getting something back
+            var impl = handle as HandleImpl;
+            if (impl.active){ // make sure the reference is valid
+                return callback(impl.value);
+            }
+        }
+
+        return null;
+    }
+
+#region classes
+    public abstract class Handle{ }
+#region Internal
+
+    sealed internal class HandleImpl : Handle{
         public readonly int id;
         public readonly Component key;
 
-        public HandleImpl(Component key, Component value) : base(value){
+        public readonly Component value;
+
+        public bool active = false;
+        public HandleImpl(Component key, Component value){
             id = Random.Range(10000, 99999);
             this.key = key;
+            this.value = value;
         }
 
         
@@ -67,48 +105,39 @@ public class ObjectPoolsManager : Singleton<ObjectPoolsManager>
         }
     }
 
-    class ObjectPool{
+    sealed internal class ObjectPool {
 
-        Component prototype;
-        Stack<HandleImpl> pool = new Stack<HandleImpl>();
-        Dictionary<int, HandleImpl> activeObjs = new Dictionary<int, HandleImpl>();
+        Component prototype; // what are we making
+        Stack<HandleImpl> pool = new Stack<HandleImpl>(); // available objects
+        Dictionary<int, HandleImpl> activeObjs = new Dictionary<int, HandleImpl>(); // objects on loan
 
         public ObjectPool(Component proto){
             prototype = proto;
         }
 
         public HandleImpl Borrow(){
-            if (pool.Count == 0){
+            if (pool.Count == 0){ // if there aren't any available objects, make a new one
                 var obj = Instantiate(prototype);
                 pool.Push(new HandleImpl(prototype, obj));
             }
-            var borrowed = pool.Pop();
+            var borrowed = pool.Pop(); // get the next available object
             borrowed.value.gameObject.SetActive(true);
             activeObjs[borrowed.id] = borrowed;
-            Debug.Log($"Object Borrowed. Pool of {prototype} has {pool.Count} with {activeObjs.Count} active objects. {borrowed} was borrowed");
+            borrowed.active = true;
+            //Debug.Log($"Object Borrowed. Pool of {prototype} has {pool.Count} with {activeObjs.Count} active objects. {borrowed} was borrowed");
             return borrowed;
         }
 
         public void Return(int id){
-            var handle = activeObjs.GetOrNull(id);
-            if (handle != null){
-                handle.value.gameObject.SetActive(false);
-                activeObjs.Remove(id);
-                pool.Push(handle);
-                Debug.Log($"Object Returned. Pool of {prototype} has {pool.Count} with {activeObjs.Count} active objects. {handle} was returned");
-            }
+            var handle = activeObjs[id]; // will throw exception if ID is bad
+        
+            handle.value.gameObject.SetActive(false);
+            activeObjs.Remove(id);
+            handle.active = false;
+            pool.Push(handle);
+            //Debug.Log($"Object Returned. Pool of {prototype} has {pool.Count} with {activeObjs.Count} active objects. {handle} was returned");
         }
     }
-}
-
-public static class DictExt{
-    public static TValue GetOrNull<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key) where TValue: class {
-        if (!dict.ContainsKey(key)) return null;
-        else return dict[key];
-    }
-
-    public static TValue? GetOrNull<TKey, TValue>(this Dictionary<TKey, TValue?> dict, TKey key) where TValue: struct {
-        if (!dict.ContainsKey(key)) return null;
-        else return dict[key];
-    }
+#endregion
+#endregion
 }
