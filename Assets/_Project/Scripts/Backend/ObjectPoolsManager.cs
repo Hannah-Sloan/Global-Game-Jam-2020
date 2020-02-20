@@ -27,8 +27,7 @@ public class ObjectPoolsManager : Singleton<ObjectPoolsManager>
 
     public void Return(ref Handle handle)
     {
-        if (handle is HandleImpl){ // Make sure we're actually getting something back
-            var impl = handle as HandleImpl;
+        if (handle is HandleImpl impl){ // Make sure we're actually getting something back
             var pool = pools[impl.key]; // get the right object pool
             impl.value.transform.parent = transform; // return the object here, so it doesn't get destroyed
             pool.Return(impl.id);
@@ -39,44 +38,33 @@ public class ObjectPoolsManager : Singleton<ObjectPoolsManager>
 
     // Not the preffered way of getting access to your component...
     public T UmanagedDeref<T>(Handle handle) where T : Component{
-        if (handle is HandleImpl){ // Make sure we're actually getting something back
-            var impl = handle as HandleImpl;
+        if (handle is HandleImpl impl) // Make sure we're actually getting something back
             if (impl.active) // make sure the reference is valid
-                if (impl.value is T) // Make sure we're actually getting the thing asked for...
-                    return impl.value as T;
+                if (impl.value is T value) // Make sure we're actually getting the thing asked for...
+                    return value;
             
-        }
 
         return null; // default path
     }
 
     public void CallIfValid(Handle handle, System.Action<Component> callback){
-        if (handle is HandleImpl){ // Make sure we're actually getting something back
-            var impl = handle as HandleImpl;
-            if (impl.active){ // make sure the reference is valid
+        if (handle is HandleImpl impl) // Make sure we're actually getting something back
+            if (impl.active) // make sure the reference is valid
                 callback(impl.value);
-            }
-        }
     }
     
     public TResult CallIfValid<TResult>(Handle handle, System.Func<Component, TResult> callback) where TResult: class{
-        if (handle is HandleImpl){ // Make sure we're actually getting something back
-            var impl = handle as HandleImpl;
-            if (impl.active){ // make sure the reference is valid
+        if (handle is HandleImpl impl) // Make sure we're actually getting something back
+            if (impl.active) // make sure the reference is valid
                 return callback(impl.value);
-            }
-        }
 
         return null;
     }
 
     public TResult? CallIfValid<TResult>(Handle handle, System.Func<Component, TResult?> callback) where TResult: struct{
-        if (handle is HandleImpl){ // Make sure we're actually getting something back
-            var impl = handle as HandleImpl;
-            if (impl.active){ // make sure the reference is valid
+        if (handle is HandleImpl impl) // Make sure we're actually getting something back
+            if (impl.active) // make sure the reference is valid
                 return callback(impl.value);
-            }
-        }
 
         return null;
     }
